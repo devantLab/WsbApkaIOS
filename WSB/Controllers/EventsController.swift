@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  EventsController.swift
 //  WSB
 //
 //  Created by apple on 30.03.2018.
@@ -8,18 +8,17 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
-
+class EventsController: UITableViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
-

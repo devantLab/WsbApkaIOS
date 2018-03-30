@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Loaded by FirstViewController"; ObjectID = "11S-f8-CgT"; */
+"11S-f8-CgT.text" = "Loaded by FirstViewController";
+
+/* Class = "UILabel"; text = "Loaded by FirstViewController"; ObjectID = "A5M-7J-77L"; */
+"A5M-7J-77L.text" = "Loaded by FirstViewController";
+
+/* Class = "UILabel"; text = "First View"; ObjectID = "KQZ-1w-vlD"; */
+"KQZ-1w-vlD.text" = "First View";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
+"NDk-cv-Gan.text" = "Loaded by SecondViewController";
+
+/* Class = "UILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
+"zEq-FU-wV5.text" = "Second View";
+
+/* Class = "UILabel"; text = "First View"; ObjectID = "zhX-gO-dC6"; */
+"zhX-gO-dC6.text" = "First View";

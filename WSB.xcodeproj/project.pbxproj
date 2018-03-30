@@ -16,6 +16,7 @@
 		180B843F206DAAC900C44334 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B843E206DAAC900C44334 /* MainController.swift */; };
 		180B8443206DB2BC00C44334 /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B8442206DB2BC00C44334 /* EventsController.swift */; };
 		180B8445206DB32000C44334 /* InfosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B8444206DB32000C44334 /* InfosController.swift */; };
+		180B844E206E356D00C44334 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B844D206E356D00C44334 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		180B8441206DAC8700C44334 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		180B8442206DB2BC00C44334 /* EventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
 		180B8444206DB32000C44334 /* InfosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosController.swift; sourceTree = "<group>"; };
+		180B844D206E356D00C44334 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 		180B841E206DA85E00C44334 = {
 			isa = PBXGroup;
 			children = (
+				180B844D206E356D00C44334 /* CollectionViewCell.swift */,
 				180B8429206DA85E00C44334 /* WSB */,
 				180B8428206DA85E00C44334 /* Products */,
 			);
@@ -176,6 +179,7 @@
 				180B843F206DAAC900C44334 /* MainController.swift in Sources */,
 				180B842F206DA85E00C44334 /* UniversityController.swift in Sources */,
 				180B842B206DA85E00C44334 /* AppDelegate.swift in Sources */,
+				180B844E206E356D00C44334 /* CollectionViewCell.swift in Sources */,
 				180B842D206DA85E00C44334 /* HomeController.swift in Sources */,
 				180B8443206DB2BC00C44334 /* EventsController.swift in Sources */,
 				180B8445206DB32000C44334 /* InfosController.swift in Sources */,
@@ -323,7 +327,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pl.devant.WSB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -338,7 +342,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pl.devant.WSB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

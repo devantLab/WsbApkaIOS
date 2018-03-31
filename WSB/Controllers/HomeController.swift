@@ -17,9 +17,15 @@ class HomeController: UIViewController {
     @IBOutlet weak var tipView: UIView!
     @IBOutlet weak var alertArrow: UIImageView!
     
+    @IBOutlet var buttons: [UIButton]!
+    
     @IBOutlet weak var expandableViewConstraint: NSLayoutConstraint!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //button cornerRadius
+        buttons.forEach { button in
+            button.layer.cornerRadius = 10
+        }
         //hiding the expandableView
         self.expandableViewConstraint.constant = 0
         

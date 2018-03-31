@@ -20,6 +20,8 @@ class HomeController: UIViewController {
     @IBOutlet var buttons: [UIButton]!
     
     @IBOutlet weak var expandableViewConstraint: NSLayoutConstraint!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //button cornerRadius
@@ -34,6 +36,9 @@ class HomeController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func weatherButtonClick(_ sender: Any) {
+        self.buttons[0].shake()
     }
     @IBAction func alertButtonClick(_ sender: Any) {
         expandAlertButton()

@@ -53,7 +53,6 @@
 		180B841E206DA85E00C44334 = {
 			isa = PBXGroup;
 			children = (
-				180B844D206E356D00C44334 /* CollectionViewCell.swift */,
 				180B8429206DA85E00C44334 /* WSB */,
 				180B8428206DA85E00C44334 /* Products */,
 			);
@@ -94,6 +93,7 @@
 		180B8447206DB38B00C44334 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				180B844D206E356D00C44334 /* CollectionViewCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

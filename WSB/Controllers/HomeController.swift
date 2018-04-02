@@ -16,6 +16,7 @@ class HomeController: UIViewController {
     @IBOutlet weak var eventView: UIView!
     @IBOutlet weak var tipView: UIView!
     @IBOutlet weak var alertArrow: UIImageView!
+    @IBOutlet weak var alertButton: UIButton!
     
     @IBOutlet var buttons: [UIButton]!
     
@@ -28,6 +29,9 @@ class HomeController: UIViewController {
         buttons.forEach { button in
             button.layer.cornerRadius = 10
         }
+        
+        expandableView.round(corners: [.bottomLeft, .bottomRight], radius: 10)
+        alertView.round(corners: .allCorners, radius: 10)
         //hiding the expandableView
         self.expandableViewConstraint.constant = 0
         
@@ -48,11 +52,20 @@ class HomeController: UIViewController {
     func expandAlertButton() {
         view.layoutIfNeeded()
         let height: CGFloat = (self.expandableViewConstraint.constant == 0) ? 150 : 0
-        
+        let expanded: Bool = (height == 0) ? false : true
+        if expanded == true {
+            alertView.round(corners: [.topRight, .topLeft], radius: 10)
+        }
         UIView.animate(withDuration: 0.5, animations: {
             self.expandableViewConstraint.constant = height
             self.alertArrow.transform = self.alertArrow.transform.rotated(by: CGFloat(Double.pi))
+            
             self.view.layoutIfNeeded()
+        }, completion:{ Bool in
+            if expanded == false {
+            self.alertView.round(corners: .allCorners, radius: 10)
+            }
+            
         })
     }
     

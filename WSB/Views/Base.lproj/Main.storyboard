@@ -328,6 +328,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="alertArrow" destination="jFP-RL-EwO" id="zTh-HC-GHU"/>
+                        <outlet property="alertButton" destination="m30-Gu-Ss0" id="v3Z-Hi-M7f"/>
                         <outlet property="alertView" destination="jTv-om-CIG" id="BYY-Q0-KIl"/>
                         <outlet property="eventView" destination="Ggf-EP-aOg" id="Pxv-n8-D19"/>
                         <outlet property="expandableView" destination="9fp-xV-6Wo" id="xYO-ic-sfJ"/>

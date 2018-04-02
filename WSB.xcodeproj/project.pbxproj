@@ -17,7 +17,8 @@
 		180B8443206DB2BC00C44334 /* EventsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B8442206DB2BC00C44334 /* EventsController.swift */; };
 		180B8445206DB32000C44334 /* InfosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B8444206DB32000C44334 /* InfosController.swift */; };
 		180B844E206E356D00C44334 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B844D206E356D00C44334 /* CollectionViewCell.swift */; };
-		189FEF1F207036A900FE6F77 /* UiButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FEF1E207036A900FE6F77 /* UiButtonExtension.swift */; };
+		183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AD86C2072887C002AA213 /* ButtonExtension.swift */; };
+		189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +35,8 @@
 		180B8442206DB2BC00C44334 /* EventsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsController.swift; sourceTree = "<group>"; };
 		180B8444206DB32000C44334 /* InfosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosController.swift; sourceTree = "<group>"; };
 		180B844D206E356D00C44334 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		189FEF1E207036A900FE6F77 /* UiButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiButtonExtension.swift; sourceTree = "<group>"; };
+		183AD86C2072887C002AA213 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
+		189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,8 @@
 				180B8430206DA85E00C44334 /* Main.storyboard */,
 				180B8433206DA85E00C44334 /* Assets.xcassets */,
 				180B8435206DA85E00C44334 /* LaunchScreen.storyboard */,
-				189FEF1E207036A900FE6F77 /* UiButtonExtension.swift */,
+				189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */,
+				183AD86C2072887C002AA213 /* ButtonExtension.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,11 +183,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				180B843F206DAAC900C44334 /* MainController.swift in Sources */,
-				189FEF1F207036A900FE6F77 /* UiButtonExtension.swift in Sources */,
 				180B842F206DA85E00C44334 /* UniversityController.swift in Sources */,
 				180B842B206DA85E00C44334 /* AppDelegate.swift in Sources */,
 				180B844E206E356D00C44334 /* CollectionViewCell.swift in Sources */,
 				180B842D206DA85E00C44334 /* HomeController.swift in Sources */,
+				189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */,
+				183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */,
 				180B8443206DB2BC00C44334 /* EventsController.swift in Sources */,
 				180B8445206DB32000C44334 /* InfosController.swift in Sources */,
 			);

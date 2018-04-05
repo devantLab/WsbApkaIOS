@@ -25,13 +25,17 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.layoutIfNeeded()
         //button cornerRadius
+        alertView.round(corners: .allCorners, radius: 10)
+        expandableView.round(corners: [.bottomLeft, .bottomRight], radius: 10)
         buttons.forEach { button in
             button.layer.cornerRadius = 10
         }
         
         expandableView.round(corners: [.bottomLeft, .bottomRight], radius: 10)
-        alertView.round(corners: .allCorners, radius: 10)
+        
+        self.view.setNeedsDisplay()
         //hiding the expandableView
         self.expandableViewConstraint.constant = 0
         
@@ -51,6 +55,8 @@ class HomeController: UIViewController {
     
     func expandAlertButton() {
         view.layoutIfNeeded()
+        
+
         let height: CGFloat = (self.expandableViewConstraint.constant == 0) ? 150 : 0
         let expanded: Bool = (height == 0) ? false : true
         if expanded == true {

@@ -7,32 +7,42 @@
 //
 
 import UIKit
+import Matisse
 
-class EventsController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let locationName = ["Hawaii Resort", "Mountain Expedition", "Scuba Diving", "Hawaii Resort", "Mountain Expedition", "Scuba Diving"]
-    let locationImage = [UIImage(named: "image1"), UIImage(named: "image2"), UIImage(named: "image3"), UIImage(named: "image4"), UIImage(named: "image5"), UIImage(named: "image6")]
-    let locationDescription = ["A beautiful beach resort off the coast of Hawaii", "An exhilarating mountain adventure in Yosemite National Park", "An amazing deep sea exploration event in the Gulf of Mexico", "A beautiful beach resort off the coast of Hawaii", "An exhilarating mountain adventure in Yosemite National Park", "An amazing deep sea exploration event in the Gulf of Mexico"]
+    @IBOutlet weak var tableView: UITableView!
+    
+    let eventTitle = ["Hawaii Resort", "Mountain Expedition", "Scuba Diving", "Hawaii Resort", "Mountain Expedition", "Scuba Diving"]
+    let eventTerm: String = "30 marca w godzinach 20:00 - 23:30"
+    let eventImage = ["https://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg","https://www.planwallpaper.com/static/images/9-credit-1.jpg","https://www.planwallpaper.com/static/images/6F0CE738-6419-4CF4-8E8878246C2D2569.jpg","https://www.planwallpaper.com/static/images/offset_WaterHouseMarineImages_62652-2-660x440.jpg","https://www.planwallpaper.com/static/images/6775415-beautiful-images.jpg","https://www.planwallpaper.com/static/images/Child-Girl-with-Sunflowers-Images.jpg"]
+    let eventDescription = ["A beautiful beach resort off the coast of Hawaii", "An exhilarating mountain adventure in Yosemite National Park", "An amazing deep sea exploration event in the Gulf of Mexico", "A beautiful beach resort off the coast of Hawaii", "An exhilarating mountain adventure in Yosemite National Park", "An amazing deep sea exploration event in the Gulf of Mexico"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return eventImage.count
     }
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return locationName.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        cell.locationName.text = locationName[indexPath.row]
-        cell.locationDescription.text = locationDescription[indexPath.row]
-        cell.locationImage.image = locationImage[indexPath.row]
+
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
+        
+        cell.eventImage.round(corners: .allCorners, radius: 10)
+        Matisse.load(URL.init(string: eventImage[indexPath.row])!)
+            .showIn(cell.eventImage)
+        
+        
+        cell.eventTitle.text = eventTitle[indexPath.row]
+        cell.eventTerm.text = eventTerm
+        cell.eventDescription.text = eventDescription[indexPath.row]
         return cell
+        
     }
+    
+    
+    
     
 }

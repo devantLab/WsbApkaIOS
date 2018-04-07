@@ -18,8 +18,10 @@
 		180B8445206DB32000C44334 /* InfosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B8444206DB32000C44334 /* InfosController.swift */; };
 		182060432075EB8E006834FD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060422075EB8E006834FD /* CustomTableViewCell.swift */; };
 		182060452076A64C006834FD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060442076A64C006834FD /* Event.swift */; };
+		182060482076AE7D006834FD /* EventsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060472076AE7D006834FD /* EventsPicker.swift */; };
 		183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AD86C2072887C002AA213 /* ButtonExtension.swift */; };
 		189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */; };
+		18C5657E20780A1900A97C27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5657D20780A1900A97C27 /* Constants.swift */; };
 		8291F753A4969CF9E2AA7E5F /* Pods_WSB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109B7D31E5168FB5BF7C9E08 /* Pods_WSB.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,8 +41,11 @@
 		180B8444206DB32000C44334 /* InfosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosController.swift; sourceTree = "<group>"; };
 		182060422075EB8E006834FD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		182060442076A64C006834FD /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		182060472076AE7D006834FD /* EventsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPicker.swift; sourceTree = "<group>"; };
+		182060492076B2AA006834FD /* WSB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WSB.entitlements; sourceTree = "<group>"; };
 		183AD86C2072887C002AA213 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		18C5657D20780A1900A97C27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		933B420CBD16CE8AEB283F07 /* Pods-WSB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WSB/Pods-WSB.debug.xcconfig"; sourceTree = "<group>"; };
 		F07FFDEC9BB5AB66DBC3EF15 /* Pods-WSB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WSB/Pods-WSB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +83,7 @@
 		180B8429206DA85E00C44334 /* WSB */ = {
 			isa = PBXGroup;
 			children = (
+				182060492076B2AA006834FD /* WSB.entitlements */,
 				180B8446206DB36C00C44334 /* Controllers */,
 				180B8447206DB38B00C44334 /* Models */,
 				180B8448206DB39800C44334 /* Views */,
@@ -102,8 +108,8 @@
 		180B8447206DB38B00C44334 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				182060422075EB8E006834FD /* CustomTableViewCell.swift */,
-				182060442076A64C006834FD /* Event.swift */,
+				182060462076AE15006834FD /* Events */,
+				18C5657D20780A1900A97C27 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,6 +124,16 @@
 				183AD86C2072887C002AA213 /* ButtonExtension.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		182060462076AE15006834FD /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				182060422075EB8E006834FD /* CustomTableViewCell.swift */,
+				182060442076A64C006834FD /* Event.swift */,
+				182060472076AE7D006834FD /* EventsPicker.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		2506563A8EB70B6B8F2790CA /* Pods */ = {
@@ -173,6 +189,11 @@
 					180B8426206DA85E00C44334 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -216,10 +237,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WSB/Pods-WSB-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Matisse/Matisse.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Matisse.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -273,9 +298,11 @@
 				182060452076A64C006834FD /* Event.swift in Sources */,
 				180B842D206DA85E00C44334 /* HomeController.swift in Sources */,
 				189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */,
+				182060482076AE7D006834FD /* EventsPicker.swift in Sources */,
 				183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */,
 				180B8443206DB2BC00C44334 /* EventsController.swift in Sources */,
 				180B8445206DB32000C44334 /* InfosController.swift in Sources */,
+				18C5657E20780A1900A97C27 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +441,7 @@
 			baseConfigurationReference = 933B420CBD16CE8AEB283F07 /* Pods-WSB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WSB/WSB.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3FR463T9MB;
 				INFOPLIST_FILE = WSB/Info.plist;
@@ -430,6 +458,7 @@
 			baseConfigurationReference = F07FFDEC9BB5AB66DBC3EF15 /* Pods-WSB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = WSB/WSB.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3FR463T9MB;
 				INFOPLIST_FILE = WSB/Info.plist;

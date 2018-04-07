@@ -638,7 +638,7 @@
                                                             <rect key="frame" x="0.0" y="22" width="46" height="33"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOZ-FB-Tyv">
-                                                                    <rect key="frame" x="2" y="6" width="42" height="21"/>
+                                                                    <rect key="frame" x="2" y="4" width="42" height="21"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="25"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -646,10 +646,10 @@
                                                             </subviews>
                                                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="bOZ-FB-Tyv" secondAttribute="bottom" constant="6" id="Scn-ob-Rjq"/>
-                                                                <constraint firstAttribute="trailing" secondItem="bOZ-FB-Tyv" secondAttribute="trailing" constant="2" id="fUH-eZ-nGE"/>
-                                                                <constraint firstItem="bOZ-FB-Tyv" firstAttribute="leading" secondItem="fLp-rI-5aK" secondAttribute="leading" constant="2" id="jiO-Kf-d2l"/>
-                                                                <constraint firstItem="bOZ-FB-Tyv" firstAttribute="top" secondItem="fLp-rI-5aK" secondAttribute="top" constant="6" id="zlW-Xa-dLI"/>
+                                                                <constraint firstAttribute="bottom" secondItem="bOZ-FB-Tyv" secondAttribute="bottom" constant="8" id="L52-vN-dK6"/>
+                                                                <constraint firstAttribute="trailing" secondItem="bOZ-FB-Tyv" secondAttribute="trailing" constant="2" id="nFP-Iv-6AU"/>
+                                                                <constraint firstItem="bOZ-FB-Tyv" firstAttribute="top" secondItem="fLp-rI-5aK" secondAttribute="top" constant="4" id="t7A-SE-0kH"/>
+                                                                <constraint firstItem="bOZ-FB-Tyv" firstAttribute="leading" secondItem="fLp-rI-5aK" secondAttribute="leading" constant="2" id="x1h-r1-g8R"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -699,8 +699,11 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cellView" destination="aTg-Qa-Ht5" id="LbX-EE-GEL"/>
+                                            <outlet property="dateView" destination="Y6l-B3-QfK" id="QI3-9t-GUx"/>
+                                            <outlet property="eventDay" destination="bOZ-FB-Tyv" id="JCG-vy-Muj"/>
                                             <outlet property="eventDescription" destination="KzP-xh-7uY" id="65H-NI-rl3"/>
                                             <outlet property="eventImage" destination="KBB-L9-Rev" id="mfo-UP-UZ3"/>
+                                            <outlet property="eventMonth" destination="BNh-rW-ICl" id="PRB-I3-qc0"/>
                                             <outlet property="eventTitle" destination="gmT-Ph-i8R" id="2ND-4i-M1k"/>
                                         </connections>
                                     </tableViewCell>

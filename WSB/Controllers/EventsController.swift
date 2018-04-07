@@ -16,10 +16,6 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
     var realm: Realm!
     var notificationToken: NotificationToken?
     var items = List<Event>()
-    let eventTitle = ["Hawaii Resort", "Mountain Expedition", "Scuba Diving", "Hawaii Resort", "Mountain Expedition", "Scuba Diving"]
-    let eventTerm: String = "30 marca w godzinach 20:00 - 23:30"
-    let eventImage = ["https://www.planwallpaper.com/static/images/canberra_hero_image_JiMVvYU.jpg","https://www.planwallpaper.com/static/images/9-credit-1.jpg","https://www.planwallpaper.com/static/images/6F0CE738-6419-4CF4-8E8878246C2D2569.jpg","https://www.planwallpaper.com/static/images/offset_WaterHouseMarineImages_62652-2-660x440.jpg","https://www.planwallpaper.com/static/images/6775415-beautiful-images.jpg","https://www.planwallpaper.com/static/images/Child-Girl-with-Sunflowers-Images.jpg"]
-    let eventDescription = ["A beautiful beach resort off the coast of Hawaii", "An exhilarating mountain adventure in Yosemite National Park", "An amazing deep sea exploration event in the Gulf of Mexico", "A beautiful beach resort off the coast of Hawaii", "An exhilarating mountain adventure in Yosemite National Park", "An amazing deep sea exploration event in the Gulf of Mexico"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +35,51 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.eventTitle?.text = item.eventTitle
         cell.eventDescription?.text = item.eventDescription
         Matisse.load(URL(string: item.eventImage)!).showIn(cell.eventImage)
+        let date = item.eventTerm
+        let calendar = Calendar.current
+        //let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        cell.eventMonth.text = monthName(month: month)
+        cell.eventDay.text = String(day)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.eventImage.round(corners: .allCorners, radius: 10)
         cell.dateView.round(corners: .allCorners, radius: 10)
         return cell
         
     }
+    func monthName(month: Int) -> String {
+        switch month {
+        case 1:
+            return "Jan."
+        case 2:
+            return "Feb."
+        case 3:
+            return "Mar."
+        case 4:
+            return "Apr."
+        case 5:
+            return "May"
+        case 6:
+            return "June"
+        case 7:
+            return "July"
+        case 8:
+            return "Aug."
+        case 9:
+            return "Sept."
+        case 10:
+            return "Oct."
+        case 11:
+            return "Nov."
+        case 12:
+            return "Dec."
+        default:
+            return "Error"
+        }
+    }
     func setupRealm() {
-        // ... existing function ...
+        //Realm logIn
         SyncUser.logIn(with: .usernamePassword(username: Constants.USERNAME, password: Constants.PASSWORD, register: false), server: Constants.AUTH_URL) { user, error in
             guard let user = user else {
                 fatalError(String(describing: error))
@@ -59,9 +92,8 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 )
                 self.realm = try! Realm(configuration: configuration)
                 
-                // Show initial tasks
                 func loadList() {
-                    let elements = self.realm.objects(Event.self).elements
+                    let elements = self.realm.objects(Event.self).elements.sorted(byKeyPath: "eventTerm", ascending: false)
                     elements.forEach({
                         event in
                         self.items.append(event)
@@ -70,8 +102,8 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 }
                 func updateList() {
                     
-                    if self.items.realm == nil, let list = self.realm.objects(Event.self).last {
-                        self.items.append(list)
+                    if self.items.realm == nil, let newEvent = self.realm.objects(Event.self).last {
+                        self.items.insert(newEvent, at: 0)
                     }
                     self.tableView.reloadData()
                 }

@@ -1,0 +1,20 @@
+PODS:
+  - Matisse (2.0.0)
+  - Realm (3.3.1):
+    - Realm/Headers (= 3.3.1)
+  - Realm/Headers (3.3.1)
+  - RealmSwift (3.3.1):
+    - Realm (= 3.3.1)
+
+DEPENDENCIES:
+  - Matisse (~> 2.0)
+  - RealmSwift
+
+SPEC CHECKSUMS:
+  Matisse: 5bb571613fac2c477c4402f638c8fcfd19cabcf4
+  Realm: 63ebf4903b446b0bdf2131244eb1e1549925c724
+  RealmSwift: f28fe8507bdfb8f1c924962401b83e7b9d7abb5c
+
+PODFILE CHECKSUM: a02cbe89190c507111a1d0eb61fb71c88f5157b7
+
+COCOAPODS: 1.4.0

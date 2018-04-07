@@ -1,0 +1,6 @@
+framework module Pods_WSB {
+  umbrella header "Pods-WSB-umbrella.h"
+
+  export *
+  module * { export * }
+}

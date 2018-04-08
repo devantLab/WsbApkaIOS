@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import RealmSwift
+import ForecastIO
 
 class HomeController: UIViewController {
 
@@ -20,12 +20,17 @@ class HomeController: UIViewController {
     @IBOutlet weak var alertButton: UIButton!
     
     @IBOutlet var buttons: [UIButton]!
+    @IBOutlet weak var weatherDescription: UILabel!
+    @IBOutlet weak var weatherTemperature: UILabel!
     
     @IBOutlet weak var expandableViewConstraint: NSLayoutConstraint!
     
+    let client = DarkSkyClient(apiKey: "4f71aa59dfaa7e14d3084e9fd27f0240")
+    let activityView = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadingForecast()
         view.layoutIfNeeded()
         //button cornerRadius
         alertView.round(corners: .allCorners, radius: 10)
@@ -40,6 +45,9 @@ class HomeController: UIViewController {
         //hiding the expandableView
         self.expandableViewConstraint.constant = 0
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        getForecast()
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,6 +82,36 @@ class HomeController: UIViewController {
             }
             
         })
+    }
+    func getForecast() {
+        client.units = .si
+        client.language = .polish
+        let lat = 54.372158
+        let lon = 18.638306
+        client.getForecast(latitude: lat, longitude: lon) { result in
+            switch result {
+            case .success(let currentForecast, _):
+                DispatchQueue.main.async {
+                    self.weatherDescription.text = currentForecast.currently?.summary
+                    let temperature: Int = Int((currentForecast.currently?.temperature)!)
+                    self.weatherTemperature.text = String(temperature) + "°"
+                    self.activityView.stopAnimating()
+                }
+                
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self.weatherTemperature.text = "Wystąpił błąd podczas aktualizacji pogody"
+                    self.weatherTemperature.text = ":("
+                    self.activityView.stopAnimating()
+                }
+            }
+        }
+    }
+    func loadingForecast() {
+        activityView.center = weatherView.center
+        activityView.hidesWhenStopped = true
+        activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        activityView.startAnimating()
     }
     
 }

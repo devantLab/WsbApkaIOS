@@ -145,7 +145,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcm-0p-knD">
-                                                                <rect key="frame" x="92" y="20" width="157" height="28"/>
+                                                                <rect key="frame" x="92" y="20" width="239" height="28"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Gdańsk">
                                                                         <attributes>
@@ -164,14 +164,14 @@
                                                                     <constraint firstAttribute="width" constant="60" id="o2z-3x-wg8"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-33°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX7-nv-vS1">
-                                                                <rect key="frame" x="257" y="28" width="82" height="48"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX7-nv-vS1">
+                                                                <rect key="frame" x="339" y="28" width="0.0" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Pochmurnie" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-Sh-9Tk">
-                                                                <rect key="frame" x="92" y="50" width="157" height="60"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-Sh-9Tk">
+                                                                <rect key="frame" x="92" y="50" width="239" height="60"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -407,6 +407,8 @@
                         <outlet property="expandableView" destination="9fp-xV-6Wo" id="xYO-ic-sfJ"/>
                         <outlet property="expandableViewConstraint" destination="koY-Yg-as1" id="y9c-jT-Ht6"/>
                         <outlet property="tipView" destination="GL4-H0-ygI" id="Cm8-6u-GQR"/>
+                        <outlet property="weatherDescription" destination="r0n-Sh-9Tk" id="fkk-Ng-QXy"/>
+                        <outlet property="weatherTemperature" destination="xX7-nv-vS1" id="8Aj-ZP-h0s"/>
                         <outlet property="weatherView" destination="1qp-eG-Zix" id="8hR-a7-F6i"/>
                         <outletCollection property="buttons" destination="0EH-3S-aDa" collectionClass="NSMutableArray" id="9GU-N2-qbA"/>
                         <outletCollection property="buttons" destination="jjn-qe-Ncv" collectionClass="NSMutableArray" id="tZx-UO-mUy"/>

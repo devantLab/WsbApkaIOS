@@ -121,7 +121,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         //Realm logIn
         SyncUser.logIn(with: .usernamePassword(username: Constants.USERNAME, password: Constants.PASSWORD, register: false), server: Constants.AUTH_URL) { user, error in
             guard let user = user else {
-                fatalError(String(describing: error))
+                fatalError()
             }
             
             DispatchQueue.main.async {

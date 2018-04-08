@@ -7,5 +7,5 @@ target 'WSB' do
   # Pods for WSB
     pod 'Matisse', '~> 2.0'
     pod 'RealmSwift'
-    pod 'SYFavoriteButton'
+    pod 'ForecastIO'
 end

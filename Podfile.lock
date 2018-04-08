@@ -1,23 +1,23 @@
 PODS:
+  - ForecastIO (5.0.0)
   - Matisse (2.0.0)
   - Realm (3.3.1):
     - Realm/Headers (= 3.3.1)
   - Realm/Headers (3.3.1)
   - RealmSwift (3.3.1):
     - Realm (= 3.3.1)
-  - SYFavoriteButton (1.1)
 
 DEPENDENCIES:
+  - ForecastIO
   - Matisse (~> 2.0)
   - RealmSwift
-  - SYFavoriteButton
 
 SPEC CHECKSUMS:
+  ForecastIO: 013d0110a0977712624973ceb425da1936b02acf
   Matisse: 5bb571613fac2c477c4402f638c8fcfd19cabcf4
   Realm: 63ebf4903b446b0bdf2131244eb1e1549925c724
   RealmSwift: f28fe8507bdfb8f1c924962401b83e7b9d7abb5c
-  SYFavoriteButton: 9e1ec437f1aec618c2282439a46d75208afd38e4
 
-PODFILE CHECKSUM: f99b48f511c8cc4265170958eee41690f7b90890
+PODFILE CHECKSUM: cabf12b4bc010facc8428485ef6e79d0a86ffbea
 
 COCOAPODS: 1.4.0

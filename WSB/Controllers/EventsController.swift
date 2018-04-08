@@ -12,10 +12,20 @@ import RealmSwift
 
 class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    
+
     @IBOutlet weak var tableView: UITableView!
     var realm: Realm!
     var notificationToken: NotificationToken?
-    var items = List<Event>()
+    var events = List<Event>()
+    
+    // MARK: PULL TO REFRESH
+    lazy var refresher: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = tabBarController?.tabBar.barTintColor
+        refreshControl.addTarget(self, action: #selector(loadList), for: .valueChanged)
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,19 +33,20 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.dataSource = self
         setupRealm()
         
+        
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return events.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
-        let item = items[indexPath.row]
-        cell.eventTitle?.text = item.eventTitle
-        cell.eventDescription?.text = item.eventDescription
-        Matisse.load(URL(string: item.eventImage)!).showIn(cell.eventImage)
-        let date = item.eventTerm
+        let event = events[indexPath.row]
+        cell.eventTitle?.text = event.eventTitle
+        cell.eventDescription?.text = event.eventDescription
+        Matisse.load(URL(string: event.eventImage)!).showIn(cell.eventImage)
+        let date = event.eventTerm
         let calendar = Calendar.current
         //let year = calendar.component(.year, from: date)
         let month = calendar.component(.month, from: date)
@@ -48,6 +59,22 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell
         
     }
+    
+    // MARK: LOAD EVENTS METHOD
+    @objc func loadList() {
+        //upcoming events at the top
+        let loadedEvents = self.realm.objects(Event.self).elements.sorted(byKeyPath: "eventTerm", ascending: true)
+        let tempListOfEvents = List<Event>()
+        loadedEvents.forEach({
+            event in
+            tempListOfEvents.append(event)
+        })
+        self.events = tempListOfEvents
+        self.tableView.reloadData()
+        refresher.endRefreshing()
+    }
+    
+    // MARK: MONTHNAME METHOD
     func monthName(month: Int) -> String {
         switch month {
         case 1:
@@ -78,7 +105,19 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
             return "Error"
         }
     }
+    
+    // MARK: REALM SETUP
     func setupRealm() {
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        let activityView = UIActivityIndicatorView()
+        activityView.center = self.view.center
+        activityView.hidesWhenStopped = true
+        activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+        activityView.color = tabBarController?.tabBar.barTintColor
+        activityView.startAnimating()
+        
+        self.view.addSubview(activityView)
+
         //Realm logIn
         SyncUser.logIn(with: .usernamePassword(username: Constants.USERNAME, password: Constants.PASSWORD, register: false), server: Constants.AUTH_URL) { user, error in
             guard let user = user else {
@@ -91,34 +130,29 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
                     syncConfiguration: SyncConfiguration(user: user, realmURL: Constants.REALM_URL)
                 )
                 self.realm = try! Realm(configuration: configuration)
+                self.loadList()
+                self.tableView.refreshControl = self.refresher
+                activityView.stopAnimating()
+                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
                 
-                func loadList() {
-                    let elements = self.realm.objects(Event.self).elements.sorted(byKeyPath: "eventTerm", ascending: false)
-                    elements.forEach({
-                        event in
-                        self.items.append(event)
-                    })
-                    self.tableView.reloadData()
-                }
-                func updateList() {
-                    
-                    if self.items.realm == nil, let newEvent = self.realm.objects(Event.self).last {
-                        self.items.insert(newEvent, at: 0)
-                    }
-                    self.tableView.reloadData()
-                }
-                loadList()
-                
-                // Notify us when Realm changes
-                self.notificationToken = self.realm.observe { _,_ in
-                    updateList()
-                    
-                }
             }
         }
     }
     
+    // MARK: REALM OBSERVE (UNIMPLEMENTED)
+    //                func updateList() {
+    //
+    //                    if self.items.realm == nil, let newEvent = self.realm.objects(Event.self).last {
+    //                        self.items.insert(newEvent, at: 0)
+    //                    }
+    //                    self.tableView.reloadData()
+    //                }
+    //self.loadList()
     
-    
+    // Notify us when Realm changes
+    //                self.notificationToken = self.realm.observe { _,_ in
+    //                    updateList()
+    //
+    //                }
     
 }

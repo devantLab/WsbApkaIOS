@@ -119,7 +119,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.view.addSubview(activityView)
 
         //Realm logIn
-        SyncUser.logIn(with: .usernamePassword(username: Constants.USERNAME, password: Constants.PASSWORD, register: false), server: Constants.AUTH_URL) { user, error in
+        SyncUser.logIn(with: .usernamePassword(username: Constants.REALM_USERNAME, password: Constants.REALM_PASSWORD, register: false), server: Constants.REALM_AUTH_URL) { user, error in
             guard let user = user else {
                 fatalError()
             }

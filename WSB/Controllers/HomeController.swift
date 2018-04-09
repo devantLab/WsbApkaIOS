@@ -25,7 +25,7 @@ class HomeController: UIViewController {
     
     @IBOutlet weak var expandableViewConstraint: NSLayoutConstraint!
     
-    let client = DarkSkyClient(apiKey: "4f71aa59dfaa7e14d3084e9fd27f0240")
+    let client = DarkSkyClient(apiKey: Constants.FORECAST_API_KEY)
     let activityView = UIActivityIndicatorView()
     
     override func viewDidLoad() {

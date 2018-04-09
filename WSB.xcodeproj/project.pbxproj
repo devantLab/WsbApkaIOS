@@ -87,6 +87,7 @@
 				180B8446206DB36C00C44334 /* Controllers */,
 				180B8447206DB38B00C44334 /* Models */,
 				180B8448206DB39800C44334 /* Views */,
+				180D7418207B4F130033C139 /* Supporting Files */,
 				180B8438206DA85E00C44334 /* Info.plist */,
 			);
 			path = WSB;
@@ -108,8 +109,8 @@
 		180B8447206DB38B00C44334 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				180D7417207B4C2E0033C139 /* Config */,
 				182060462076AE15006834FD /* Events */,
-				18C5657D20780A1900A97C27 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,12 +119,27 @@
 			isa = PBXGroup;
 			children = (
 				180B8430206DA85E00C44334 /* Main.storyboard */,
-				180B8433206DA85E00C44334 /* Assets.xcassets */,
 				180B8435206DA85E00C44334 /* LaunchScreen.storyboard */,
 				189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */,
 				183AD86C2072887C002AA213 /* ButtonExtension.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		180D7417207B4C2E0033C139 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				18C5657D20780A1900A97C27 /* Constants.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		180D7418207B4F130033C139 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				180B8433206DA85E00C44334 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		182060462076AE15006834FD /* Events */ = {

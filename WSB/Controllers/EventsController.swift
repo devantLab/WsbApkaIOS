@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Matisse
+import SDWebImage
 import Firebase
 
 class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -65,7 +65,8 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let event = events[indexPath.row]
         cell.eventTitle?.text = event.eventTitle
         cell.eventDescription?.text = event.eventDescription
-        Matisse.load(URL(string: event.eventImageURL)!).showIn(cell.eventImage)
+        cell.eventImage.sd_setImage(with: URL(string: event.eventImageURL), placeholderImage: UIImage(named: "placeholder.png"))
+        
         // TODO: bottom
 //        let calendar = NSCalendar.current
 //        let components = calendar.components(.day | .month, from: event.eventTerm)

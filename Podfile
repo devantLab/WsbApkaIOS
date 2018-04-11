@@ -5,7 +5,7 @@ target 'WSB' do
   use_frameworks!
 
   # Pods for WSB
-    pod 'Matisse', '~> 2.0'
+    pod 'SDWebImage', '~> 4.0'
     pod 'RealmSwift'
     pod 'ForecastIO'
     pod 'KWDrawerController', '~> 4.1.3'

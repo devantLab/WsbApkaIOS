@@ -19,6 +19,7 @@
 		182060432075EB8E006834FD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060422075EB8E006834FD /* CustomTableViewCell.swift */; };
 		182060452076A64C006834FD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060442076A64C006834FD /* Event.swift */; };
 		182060482076AE7D006834FD /* EventsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060472076AE7D006834FD /* EventsPicker.swift */; };
+		183637E0207DF9DD00551501 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183637DF207DF9DD00551501 /* GoogleService-Info.plist */; };
 		183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AD86C2072887C002AA213 /* ButtonExtension.swift */; };
 		189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */; };
 		18C5657E20780A1900A97C27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5657D20780A1900A97C27 /* Constants.swift */; };
@@ -43,6 +44,7 @@
 		182060442076A64C006834FD /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		182060472076AE7D006834FD /* EventsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPicker.swift; sourceTree = "<group>"; };
 		182060492076B2AA006834FD /* WSB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WSB.entitlements; sourceTree = "<group>"; };
+		183637DF207DF9DD00551501 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		183AD86C2072887C002AA213 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		18C5657D20780A1900A97C27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -84,11 +86,13 @@
 			isa = PBXGroup;
 			children = (
 				182060492076B2AA006834FD /* WSB.entitlements */,
+				180B842A206DA85E00C44334 /* AppDelegate.swift */,
 				180B8446206DB36C00C44334 /* Controllers */,
 				180B8447206DB38B00C44334 /* Models */,
 				180B8448206DB39800C44334 /* Views */,
 				180D7418207B4F130033C139 /* Supporting Files */,
 				180B8438206DA85E00C44334 /* Info.plist */,
+				183637DF207DF9DD00551501 /* GoogleService-Info.plist */,
 			);
 			path = WSB;
 			sourceTree = "<group>";
@@ -96,7 +100,6 @@
 		180B8446206DB36C00C44334 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				180B842A206DA85E00C44334 /* AppDelegate.swift */,
 				180B843E206DAAC900C44334 /* MainController.swift */,
 				180B842C206DA85E00C44334 /* HomeController.swift */,
 				180B842E206DA85E00C44334 /* UniversityController.swift */,
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				180B8437206DA85E00C44334 /* LaunchScreen.storyboard in Resources */,
+				183637E0207DF9DD00551501 /* GoogleService-Info.plist in Resources */,
 				180B8434206DA85E00C44334 /* Assets.xcassets in Resources */,
 				180B8432206DA85E00C44334 /* Main.storyboard in Resources */,
 			);
@@ -252,17 +256,29 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WSB/Pods-WSB-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Fire/Fire.framework",
 				"${BUILT_PRODUCTS_DIR}/ForecastIO/ForecastIO.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Jsonify/Jsonify.framework",
+				"${BUILT_PRODUCTS_DIR}/KWDrawerController/KWDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/Matisse/Matisse.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ForecastIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Jsonify.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KWDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Matisse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

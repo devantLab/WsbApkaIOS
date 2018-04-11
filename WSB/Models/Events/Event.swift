@@ -7,19 +7,24 @@
 //
 
 import Foundation
-import RealmSwift
 
-class Event: Object {
+class Event {
+    var eventId: Int
+    var eventTitle: String
+    var eventDescription: String
+    var eventTerm: Date
+    var eventPlace: String
+    var eventImageURL: String
+    var eventClicks: Int
     
-    @objc dynamic var uuid: String = UUID().uuidString
-    @objc dynamic var eventTitle: String = ""
-    @objc dynamic var eventTerm: Date = Date()
-    @objc dynamic var eventDescription: String = ""
-    @objc dynamic var eventPlace: String = ""
-    @objc dynamic var eventImage: String = ""
-    
-    override static func primaryKey() -> String? {
-        return "uuid"
+    init(id: Int, title: String, description: String, term: Date, place: String, imageURL: String, clicks: Int) {
+        eventId = id
+        eventTitle = title
+        eventDescription = description
+        eventTerm = term
+        eventPlace = place
+        eventImageURL = imageURL
+        eventClicks = clicks
     }
     
 }

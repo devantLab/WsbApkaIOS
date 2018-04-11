@@ -8,4 +8,8 @@ target 'WSB' do
     pod 'Matisse', '~> 2.0'
     pod 'RealmSwift'
     pod 'ForecastIO'
+    pod 'KWDrawerController', '~> 4.1.3'
+    pod 'Fire'
+    pod 'Firebase'
+    pod 'Firebase/Database'
 end

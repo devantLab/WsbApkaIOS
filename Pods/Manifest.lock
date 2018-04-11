@@ -1,6 +1,42 @@
 PODS:
+  - Fire (3.3.4):
+    - Jsonify
+  - Firebase (4.11.0):
+    - Firebase/Core (= 4.11.0)
+  - Firebase/Core (4.11.0):
+    - FirebaseAnalytics (= 4.1.0)
+    - FirebaseCore (= 4.0.18)
+  - Firebase/Database (4.11.0):
+    - Firebase/Core
+    - FirebaseDatabase (= 4.1.5)
+  - FirebaseAnalytics (4.1.0):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.18):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (4.1.5):
+    - FirebaseAnalytics (~> 4.1)
+    - FirebaseCore (~> 4.0)
+    - leveldb-library (~> 1.18)
+  - FirebaseInstanceID (2.0.10):
+    - FirebaseCore (~> 4.0)
   - ForecastIO (5.0.0)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - Jsonify (2.1.0)
+  - KWDrawerController (4.1.3):
+    - KWDrawerController/Core (= 4.1.3)
+  - KWDrawerController/Core (4.1.3)
+  - leveldb-library (1.20)
   - Matisse (2.0.0)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
   - Realm (3.3.1):
     - Realm/Headers (= 3.3.1)
   - Realm/Headers (3.3.1)
@@ -8,16 +44,31 @@ PODS:
     - Realm (= 3.3.1)
 
 DEPENDENCIES:
+  - Fire
+  - Firebase
+  - Firebase/Database
   - ForecastIO
+  - KWDrawerController (~> 4.1.3)
   - Matisse (~> 2.0)
   - RealmSwift
 
 SPEC CHECKSUMS:
+  Fire: 41331f37e920cc5bba5d67b0111c1925e0ac600e
+  Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
+  FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
+  FirebaseCore: b981f47e5254cbcfdeb483355300d743f6fcab2c
+  FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
+  FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   ForecastIO: 013d0110a0977712624973ceb425da1936b02acf
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  Jsonify: 43c28e11077031c829575ef47c1461208a2fc420
+  KWDrawerController: 49a6597be74c1fb10ed690e89def27866bbd460a
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   Matisse: 5bb571613fac2c477c4402f638c8fcfd19cabcf4
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Realm: 63ebf4903b446b0bdf2131244eb1e1549925c724
   RealmSwift: f28fe8507bdfb8f1c924962401b83e7b9d7abb5c
 
-PODFILE CHECKSUM: cabf12b4bc010facc8428485ef6e79d0a86ffbea
+PODFILE CHECKSUM: 1ddeed4ac7da937cd56ac61f75b37d5c4dd3a6dd
 
 COCOAPODS: 1.4.0

@@ -8,22 +8,20 @@
 
 import UIKit
 import Matisse
-import RealmSwift
+import Firebase
 
 class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
 
     @IBOutlet weak var tableView: UITableView!
-    var realm: Realm!
-    var notificationToken: NotificationToken?
-    var events = List<Event>()
-    
+    let rootRef = Database.database().reference()
+    var events = [Event]()
     // MARK: PULL TO REFRESH
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = tabBarController?.tabBar.barTintColor
-        refreshControl.addTarget(self, action: #selector(loadList), for: .valueChanged)
+//        refreshControl.addTarget(self, action: #selector(loadList), for: .valueChanged)
         return refreshControl
     }()
     
@@ -31,11 +29,33 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        setupRealm()
+//        setupRealm()
         
         
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadEvents()
+    }
+    func loadEvents() {
+        let eventsRef = rootRef.child("events")
+        eventsRef.observe(DataEventType.childAdded, with: {(snapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                let id: Int = dict["event_id"] as! Int
+                let title: String = dict["event_title"] as! String
+                let description: String = dict["event_description"] as! String
+                let term: Date = Date()
+                // TODO: cast json date string to date
+                let place: String = dict["event_place"] as! String
+                let imageURL: String = dict["event_image_url"] as! String
+                let clicks: Int = dict["event_clicks"] as! Int
+                let event = Event(id: id, title: title, description: description, term: term, place: place, imageURL: imageURL, clicks: clicks)
+                self.events.append(event)
+                self.tableView.reloadData()
+            }
+            
+        })
+    }
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return events.count
     }
@@ -45,14 +65,13 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let event = events[indexPath.row]
         cell.eventTitle?.text = event.eventTitle
         cell.eventDescription?.text = event.eventDescription
-        Matisse.load(URL(string: event.eventImage)!).showIn(cell.eventImage)
-        let date = event.eventTerm
-        let calendar = Calendar.current
-        //let year = calendar.component(.year, from: date)
-        let month = calendar.component(.month, from: date)
-        let day = calendar.component(.day, from: date)
-        cell.eventMonth.text = monthName(month: month)
-        cell.eventDay.text = String(day)
+        Matisse.load(URL(string: event.eventImageURL)!).showIn(cell.eventImage)
+        // TODO: bottom
+//        let calendar = NSCalendar.current
+//        let components = calendar.components(.day | .month, from: event.eventTerm)
+//        let month = event.eventTerm
+//        cell.eventMonth.text = monthName(month: month)
+//        cell.eventDay.text = String(day)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.eventImage.round(corners: .allCorners, radius: 10)
         cell.dateView.round(corners: .allCorners, radius: 10)
@@ -61,18 +80,18 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     // MARK: LOAD EVENTS METHOD
-    @objc func loadList() {
-        //upcoming events at the top
-        let loadedEvents = self.realm.objects(Event.self).elements.sorted(byKeyPath: "eventTerm", ascending: true)
-        let tempListOfEvents = List<Event>()
-        loadedEvents.forEach({
-            event in
-            tempListOfEvents.append(event)
-        })
-        self.events = tempListOfEvents
-        self.tableView.reloadData()
-        refresher.endRefreshing()
-    }
+//    @objc func loadList() {
+//        //upcoming events at the top
+//        let loadedEvents = self.realm.objects(Event.self).elements.sorted(byKeyPath: "eventTerm", ascending: true)
+//        let tempListOfEvents = List<Event>()
+//        loadedEvents.forEach({
+//            event in
+//            tempListOfEvents.append(event)
+//        })
+//        self.events = tempListOfEvents
+//        self.tableView.reloadData()
+//        refresher.endRefreshing()
+//    }
     
     // MARK: MONTHNAME METHOD
     func monthName(month: Int) -> String {
@@ -107,37 +126,37 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     // MARK: REALM SETUP
-    func setupRealm() {
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        let activityView = UIActivityIndicatorView()
-        activityView.center = self.view.center
-        activityView.hidesWhenStopped = true
-        activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-        activityView.color = tabBarController?.tabBar.barTintColor
-        activityView.startAnimating()
-        
-        self.view.addSubview(activityView)
-
-        //Realm logIn
-        SyncUser.logIn(with: .usernamePassword(username: Constants.REALM_USERNAME, password: Constants.REALM_PASSWORD, register: false), server: Constants.REALM_AUTH_URL) { user, error in
-            guard let user = user else {
-                fatalError()
-            }
-            
-            DispatchQueue.main.async {
-                // Open Realm
-                let configuration = Realm.Configuration(
-                    syncConfiguration: SyncConfiguration(user: user, realmURL: Constants.REALM_URL)
-                )
-                self.realm = try! Realm(configuration: configuration)
-                self.loadList()
-                self.tableView.refreshControl = self.refresher
-                activityView.stopAnimating()
-                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-                
-            }
-        }
-    }
+//    func setupRealm() {
+//        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+//        let activityView = UIActivityIndicatorView()
+//        activityView.center = self.view.center
+//        activityView.hidesWhenStopped = true
+//        activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+//        activityView.color = tabBarController?.tabBar.barTintColor
+//        activityView.startAnimating()
+//
+//        self.view.addSubview(activityView)
+//
+//        //Realm logIn
+//        SyncUser.logIn(with: .usernamePassword(username: Constants.REALM_USERNAME, password: Constants.REALM_PASSWORD, register: false), server: Constants.REALM_AUTH_URL) { user, error in
+//            guard let user = user else {
+//                fatalError()
+//            }
+//
+//            DispatchQueue.main.async {
+//                // Open Realm
+//                let configuration = Realm.Configuration(
+//                    syncConfiguration: SyncConfiguration(user: user, realmURL: Constants.REALM_URL)
+//                )
+//                self.realm = try! Realm(configuration: configuration)
+//                self.loadList()
+//                self.tableView.refreshControl = self.refresher
+//                activityView.stopAnimating()
+//                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+//
+//            }
+//        }
+//    }
     
     // MARK: REALM OBSERVE (UNIMPLEMENTED)
     //                func updateList() {

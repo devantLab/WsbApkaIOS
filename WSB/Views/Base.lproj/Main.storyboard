@@ -367,7 +367,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oae-8N-wzm" userLabel="Toolbar">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_ios" translatesAutoresizingMaskIntoConstraints="NO" id="Oi5-he-658">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sciana_ios_414x86" translatesAutoresizingMaskIntoConstraints="NO" id="Oi5-he-658">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                     </imageView>
                                 </subviews>
@@ -417,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="711.59420289855075" y="-1453.5326086956522"/>
+            <point key="canvasLocation" x="711.20000000000005" y="-1454.1871921182267"/>
         </scene>
         <!--University Controller-->
         <scene sceneID="wg7-f3-ORb">
@@ -430,7 +430,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xiu-oF-c82">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_menu_logo" translatesAutoresizingMaskIntoConstraints="NO" id="yPd-w9-EL8">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sciana_ios_414x86" translatesAutoresizingMaskIntoConstraints="NO" id="yPd-w9-EL8">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                     </imageView>
                                 </subviews>
@@ -532,7 +532,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nkR-UH-4PS" userLabel="Toolbar">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_menu_logo" translatesAutoresizingMaskIntoConstraints="NO" id="0LD-W8-cYd">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sciana_ios_414x86" translatesAutoresizingMaskIntoConstraints="NO" id="0LD-W8-cYd">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                     </imageView>
                                 </subviews>
@@ -578,7 +578,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X1O-SY-oU3" userLabel="Toolbar">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_menu_logo" translatesAutoresizingMaskIntoConstraints="NO" id="cau-bB-mjz">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sciana_ios_414x86" translatesAutoresizingMaskIntoConstraints="NO" id="cau-bB-mjz">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
                                     </imageView>
                                 </subviews>
@@ -737,7 +737,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_ios" width="375" height="84"/>
         <image name="dashboard" width="30" height="30"/>
         <image name="events" width="30" height="30"/>
         <image name="icons8-calendar" width="120" height="120"/>
@@ -748,7 +747,7 @@
         <image name="icons8-right_4" width="120" height="120"/>
         <image name="image6" width="600" height="600"/>
         <image name="infos" width="30" height="30"/>
-        <image name="top_menu_logo" width="453" height="190"/>
+        <image name="sciana_ios_414x86" width="414" height="86"/>
         <image name="university" width="30" height="30"/>
     </resources>
 </document>

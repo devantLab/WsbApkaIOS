@@ -21,7 +21,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = tabBarController?.tabBar.barTintColor
-//        refreshControl.addTarget(self, action: #selector(loadList), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(loadEvents), for: .valueChanged)
         return refreshControl
     }()
     
@@ -29,7 +29,8 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-//        setupRealm()
+        self.tableView.refreshControl = self.refresher
+        
         
         
     }
@@ -37,7 +38,17 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         super.viewDidAppear(animated)
         loadEvents()
     }
-    func loadEvents() {
+    @objc func loadEvents() {
+                tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+                let activityView = UIActivityIndicatorView()
+                activityView.center = self.view.center
+                activityView.hidesWhenStopped = true
+                activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+                activityView.color = tabBarController?.tabBar.barTintColor
+                activityView.startAnimating()
+        
+                self.view.addSubview(activityView)
+        
         let eventsRef = rootRef.child("events")
         eventsRef.observe(DataEventType.childAdded, with: {(snapshot) in
             if let dict = snapshot.value as? [String: Any] {
@@ -52,7 +63,12 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
                 let event = Event(id: id, title: title, description: description, term: term, place: place, imageURL: imageURL, clicks: clicks)
                 self.events.append(event)
                 self.tableView.reloadData()
+                
+                
             }
+            activityView.stopAnimating()
+            self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+            self.refresher.endRefreshing()
             
         })
     }
@@ -79,20 +95,6 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell
         
     }
-    
-    // MARK: LOAD EVENTS METHOD
-//    @objc func loadList() {
-//        //upcoming events at the top
-//        let loadedEvents = self.realm.objects(Event.self).elements.sorted(byKeyPath: "eventTerm", ascending: true)
-//        let tempListOfEvents = List<Event>()
-//        loadedEvents.forEach({
-//            event in
-//            tempListOfEvents.append(event)
-//        })
-//        self.events = tempListOfEvents
-//        self.tableView.reloadData()
-//        refresher.endRefreshing()
-//    }
     
     // MARK: MONTHNAME METHOD
     func monthName(month: Int) -> String {
@@ -125,54 +127,5 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
             return "Error"
         }
     }
-    
-    // MARK: REALM SETUP
-//    func setupRealm() {
-//        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-//        let activityView = UIActivityIndicatorView()
-//        activityView.center = self.view.center
-//        activityView.hidesWhenStopped = true
-//        activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-//        activityView.color = tabBarController?.tabBar.barTintColor
-//        activityView.startAnimating()
-//
-//        self.view.addSubview(activityView)
-//
-//        //Realm logIn
-//        SyncUser.logIn(with: .usernamePassword(username: Constants.REALM_USERNAME, password: Constants.REALM_PASSWORD, register: false), server: Constants.REALM_AUTH_URL) { user, error in
-//            guard let user = user else {
-//                fatalError()
-//            }
-//
-//            DispatchQueue.main.async {
-//                // Open Realm
-//                let configuration = Realm.Configuration(
-//                    syncConfiguration: SyncConfiguration(user: user, realmURL: Constants.REALM_URL)
-//                )
-//                self.realm = try! Realm(configuration: configuration)
-//                self.loadList()
-//                self.tableView.refreshControl = self.refresher
-//                activityView.stopAnimating()
-//                self.tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-//
-//            }
-//        }
-//    }
-    
-    // MARK: REALM OBSERVE (UNIMPLEMENTED)
-    //                func updateList() {
-    //
-    //                    if self.items.realm == nil, let newEvent = self.realm.objects(Event.self).last {
-    //                        self.items.insert(newEvent, at: 0)
-    //                    }
-    //                    self.tableView.reloadData()
-    //                }
-    //self.loadList()
-    
-    // Notify us when Realm changes
-    //                self.notificationToken = self.realm.observe { _,_ in
-    //                    updateList()
-    //
-    //                }
     
 }

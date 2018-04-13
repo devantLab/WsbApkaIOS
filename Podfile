@@ -8,7 +8,7 @@ target 'WSB' do
     pod 'SDWebImage', '~> 4.0'
     pod 'RealmSwift'
     pod 'ForecastIO'
-    pod 'KWDrawerController', '~> 4.1.3'
+    pod 'SWRevealViewController', '~> 2.3'
     pod 'Fire'
     pod 'Firebase'
     pod 'Firebase/Database'

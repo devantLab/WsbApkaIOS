@@ -21,6 +21,8 @@
 		182060482076AE7D006834FD /* EventsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060472076AE7D006834FD /* EventsPicker.swift */; };
 		183637E0207DF9DD00551501 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183637DF207DF9DD00551501 /* GoogleService-Info.plist */; };
 		183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AD86C2072887C002AA213 /* ButtonExtension.swift */; };
+		188A8DEC2081238F004A31B6 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A8DEB2081238F004A31B6 /* EventDetailController.swift */; };
+		188A8DEE2081F46D004A31B6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A8DED2081F46D004A31B6 /* NavigationController.swift */; };
 		189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */; };
 		18C5657E20780A1900A97C27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5657D20780A1900A97C27 /* Constants.swift */; };
 		8291F753A4969CF9E2AA7E5F /* Pods_WSB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109B7D31E5168FB5BF7C9E08 /* Pods_WSB.framework */; };
@@ -46,6 +48,8 @@
 		182060492076B2AA006834FD /* WSB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WSB.entitlements; sourceTree = "<group>"; };
 		183637DF207DF9DD00551501 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		183AD86C2072887C002AA213 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
+		188A8DEB2081238F004A31B6 /* EventDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
+		188A8DED2081F46D004A31B6 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		18C5657D20780A1900A97C27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		933B420CBD16CE8AEB283F07 /* Pods-WSB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WSB/Pods-WSB.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 				180B842E206DA85E00C44334 /* UniversityController.swift */,
 				180B8442206DB2BC00C44334 /* EventsController.swift */,
 				180B8444206DB32000C44334 /* InfosController.swift */,
+				188A8DEB2081238F004A31B6 /* EventDetailController.swift */,
+				188A8DED2081F46D004A31B6 /* NavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -260,10 +266,7 @@
 				"${BUILT_PRODUCTS_DIR}/ForecastIO/ForecastIO.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Jsonify/Jsonify.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SWRevealViewController/SWRevealViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -273,10 +276,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ForecastIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Jsonify.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWRevealViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -327,7 +327,9 @@
 			files = (
 				182060432075EB8E006834FD /* CustomTableViewCell.swift in Sources */,
 				180B843F206DAAC900C44334 /* MainController.swift in Sources */,
+				188A8DEE2081F46D004A31B6 /* NavigationController.swift in Sources */,
 				180B842F206DA85E00C44334 /* UniversityController.swift in Sources */,
+				188A8DEC2081238F004A31B6 /* EventDetailController.swift in Sources */,
 				180B842B206DA85E00C44334 /* AppDelegate.swift in Sources */,
 				182060452076A64C006834FD /* Event.swift in Sources */,
 				180B842D206DA85E00C44334 /* HomeController.swift in Sources */,

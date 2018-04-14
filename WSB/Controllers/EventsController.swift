@@ -95,6 +95,11 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return cell
         
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let eventDetailController = storyboard.instantiateViewController(withIdentifier: "EventDetailController") as! EventDetailController
+        self.navigationController?.pushViewController(eventDetailController, animated: true)
+    }
     
     // MARK: MONTHNAME METHOD
     func monthName(month: Int) -> String {

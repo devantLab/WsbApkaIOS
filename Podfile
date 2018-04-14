@@ -6,9 +6,7 @@ target 'WSB' do
 
   # Pods for WSB
     pod 'SDWebImage', '~> 4.0'
-    pod 'RealmSwift'
     pod 'ForecastIO'
-    pod 'SWRevealViewController', '~> 2.3'
     pod 'Fire'
     pod 'Firebase'
     pod 'Firebase/Database'

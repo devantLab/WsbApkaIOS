@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
     }
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        //Google Maps ApiKey: AIzaSyB3kOWq1--oT18p3Xw9wZQkOOSINL6TBBw
         return true
     }
 

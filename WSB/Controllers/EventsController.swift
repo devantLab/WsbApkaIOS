@@ -97,11 +97,13 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-        let eventDetailController = storyboard.instantiateViewController(withIdentifier: "EventDetailController") as! EventDetailController
-        self.navigationController?.pushViewController(eventDetailController, animated: true)
+        performSegue(withIdentifier: "eventDetail", sender: self)
         
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? EventDetailController {
+            //add data
+        }
     }
     
     // MARK: MONTHNAME METHOD

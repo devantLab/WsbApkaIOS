@@ -8,7 +8,7 @@
 
 import UIKit
 import ForecastIO
-
+import Firebase
 class HomeController: UIViewController {
 
     @IBOutlet weak var expandableView: UIView!

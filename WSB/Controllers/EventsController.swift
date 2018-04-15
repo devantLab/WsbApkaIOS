@@ -14,9 +14,9 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
     
     
 
-    @IBOutlet weak var tableView: UITableView!
-    let rootRef = Database.database().reference()
-    var events = [Event]()
+    @IBOutlet weak private var tableView: UITableView!
+    private let rootRef = Database.database().reference()
+    private var events = [Event]()
     
     // MARK: PULL TO REFRESH
     lazy var refresher: UIRefreshControl = {
@@ -83,9 +83,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         cell.eventDescription?.text = event.eventDescription
         cell.eventImage.sd_setImage(with: URL(string: event.eventImageURL), placeholderImage: UIImage(named: "placeholder.png"))
         let date = event.eventTerm
-        // TODO: bottom
         let calendar = Calendar.current
-        let year = calendar.component(.year, from: date)
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
         cell.eventMonth.text = monthName(month: month)
@@ -102,7 +100,28 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? EventDetailController {
-            //add data
+            let event = events[(tableView.indexPathForSelectedRow?.row)!]
+            let calendar = Calendar.current
+            let date = event.eventTerm
+            let year = calendar.component(.year, from: date)
+            let month = calendar.component(.month, from: date)
+            let day = calendar.component(.day, from: date)
+            let hour = calendar.component(.hour, from: date)
+            let minute = calendar.component(.minute, from: date)
+            destination.eventTitle = event.eventTitle
+            destination.eventDate = "\(day) \(monthName(month: month)) \(year)"
+            destination.eventTime = "\(hour):\(minute)"
+            
+            // TODO: trim city and street
+            destination.eventCity = event.eventPlace
+            // destination.eventStreet = ?
+            
+            destination.eventImageURL = event.eventImageURL
+            destination.eventDescription = event.eventDescription
+            
+            // TODO: coordinates
+            //destination.coordinates = ["latitude": event.coordinate["latitude"], "longitude": event.coordinate["longitude"]]
+            destination.coordinates = ["latitude": 40.730610, "longitude": -73.935242]
         }
     }
     

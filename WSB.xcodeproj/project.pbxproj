@@ -26,6 +26,7 @@
 		189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */; };
 		18A7ECFB20836C9B006E9EEC /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7ECFA20836C9B006E9EEC /* Artwork.swift */; };
 		18C5657E20780A1900A97C27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5657D20780A1900A97C27 /* Constants.swift */; };
+		18F385092085D4F600B9B8C6 /* roboto in Resources */ = {isa = PBXBuildFile; fileRef = 18F385082085D4F600B9B8C6 /* roboto */; };
 		8291F753A4969CF9E2AA7E5F /* Pods_WSB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109B7D31E5168FB5BF7C9E08 /* Pods_WSB.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		18A7ECFA20836C9B006E9EEC /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
 		18C5657D20780A1900A97C27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		18F385082085D4F600B9B8C6 /* roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; name = roboto; path = ../../../../../Downloads/roboto; sourceTree = "<group>"; };
 		933B420CBD16CE8AEB283F07 /* Pods-WSB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WSB/Pods-WSB.debug.xcconfig"; sourceTree = "<group>"; };
 		F07FFDEC9BB5AB66DBC3EF15 /* Pods-WSB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WSB/Pods-WSB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +151,7 @@
 		180D7418207B4F130033C139 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18F385082085D4F600B9B8C6 /* roboto */,
 				180B8433206DA85E00C44334 /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
@@ -248,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F385092085D4F600B9B8C6 /* roboto in Resources */,
 				180B8437206DA85E00C44334 /* LaunchScreen.storyboard in Resources */,
 				183637E0207DF9DD00551501 /* GoogleService-Info.plist in Resources */,
 				180B8434206DA85E00C44334 /* Assets.xcassets in Resources */,

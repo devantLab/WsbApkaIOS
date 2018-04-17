@@ -108,7 +108,7 @@ open class DarkSkyClient : NSObject {
             queryItems.append(URLQueryItem(name: "exclude", value: excludeFieldsString))
         }
         urlBuilder.queryItems = queryItems
-    
+       
         return urlBuilder.url!
     }
 }

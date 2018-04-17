@@ -27,7 +27,8 @@ class HomeController: UIViewController {
     
     let client = DarkSkyClient(apiKey: Constants.FORECAST_API_KEY)
     let activityView = UIActivityIndicatorView()
-    
+    var weatherDescriptionText = "Wystąpił błąd podczas aktualizacji pogody"
+    var weatherTemperatureText = ":("
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingForecast()
@@ -100,8 +101,8 @@ class HomeController: UIViewController {
                 
             case .failure(_):
                 DispatchQueue.main.async {
-                    self.weatherTemperature.text = "Wystąpił błąd podczas aktualizacji pogody"
-                    self.weatherTemperature.text = ":("
+                    self.weatherDescription.text = self.weatherDescriptionText
+                    self.weatherTemperature.text = self.weatherTemperatureText
                     self.activityView.stopAnimating()
                 }
             }

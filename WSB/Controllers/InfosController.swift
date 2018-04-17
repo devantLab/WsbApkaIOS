@@ -10,8 +10,13 @@ import UIKit
 
 class InfosController: UIViewController {
     
+    @IBOutlet var views: [UIView]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        views.forEach({view in
+            view.round(corners: .allCorners, radius: 10)
+        })
     }
     
     override func didReceiveMemoryWarning() {

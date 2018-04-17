@@ -33,7 +33,7 @@ extension UIButton {
         flash.toValue = 0.1
         flash.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         flash.autoreverses = true
-        flash.repeatCount = 3
+        flash.repeatCount = 1
         
         layer.add(flash, forKey: nil)
     }

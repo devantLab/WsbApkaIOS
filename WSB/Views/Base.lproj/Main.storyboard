@@ -504,6 +504,9 @@
                                                                 <state key="normal" title="Ubezpieczenie">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonClick:" destination="kHw-HD-EOH" eventType="touchUpInside" id="WQm-OB-6kG"/>
+                                                                </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-bandage_filled" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-Ri-Lmy">
                                                                 <rect key="frame" x="16" y="16" width="30" height="30"/>
@@ -549,13 +552,16 @@
                                                                     <constraint firstAttribute="width" constant="30" id="gEJ-MC-JLJ"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aB5-9g-kdT">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aB5-9g-kdT">
                                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="62"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="22"/>
                                                                 <inset key="contentEdgeInsets" minX="62" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <state key="normal" title="Bankowość">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonClick:" destination="kHw-HD-EOH" eventType="touchUpInside" id="ka9-aK-C9F"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.0" green="0.12549019610000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -573,13 +579,16 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlH-0H-rrb">
                                                         <rect key="frame" x="0.0" y="156" width="359" height="62"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4k1-jj-aY4">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4k1-jj-aY4">
                                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="62"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="22"/>
                                                                 <inset key="contentEdgeInsets" minX="62" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <state key="normal" title="Polskie prawo">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonClick:" destination="kHw-HD-EOH" eventType="touchUpInside" id="LdS-Yb-4gm"/>
+                                                                </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-rules_filled" translatesAutoresizingMaskIntoConstraints="NO" id="KfE-6w-q3h">
                                                                 <rect key="frame" x="16" y="16" width="30" height="30"/>
@@ -611,13 +620,16 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cx4-sG-kuV">
                                                         <rect key="frame" x="0.0" y="234" width="359" height="62"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyw-7j-Fri">
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyw-7j-Fri">
                                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="62"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="22"/>
                                                                 <inset key="contentEdgeInsets" minX="62" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <state key="normal" title="Ciekawostki">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonClick:" destination="kHw-HD-EOH" eventType="touchUpInside" id="r9a-jr-oy9"/>
+                                                                </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-light_on" translatesAutoresizingMaskIntoConstraints="NO" id="d8F-pj-BKi">
                                                                 <rect key="frame" x="16" y="16" width="30" height="30"/>
@@ -649,13 +661,16 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyo-0s-btW">
                                                         <rect key="frame" x="0.0" y="312" width="359" height="62"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpT-pc-eM1">
+                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IpT-pc-eM1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="62"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="22"/>
                                                                 <inset key="contentEdgeInsets" minX="62" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                                 <state key="normal" title="Aplikacje">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="buttonClick:" destination="kHw-HD-EOH" eventType="touchUpInside" id="dss-ey-SfY"/>
+                                                                </connections>
                                                             </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-app_symbol_filled" translatesAutoresizingMaskIntoConstraints="NO" id="sg4-t1-pgZ">
                                                                 <rect key="frame" x="16" y="16" width="30" height="30"/>
@@ -728,6 +743,11 @@
                         <outletCollection property="views" destination="wlH-0H-rrb" collectionClass="NSMutableArray" id="h0t-nl-60k"/>
                         <outletCollection property="views" destination="Cx4-sG-kuV" collectionClass="NSMutableArray" id="7IC-EF-c6d"/>
                         <outletCollection property="views" destination="Zyo-0s-btW" collectionClass="NSMutableArray" id="bmn-R6-5wk"/>
+                        <outletCollection property="buttons" destination="PcN-WV-gFe" collectionClass="NSMutableArray" id="g9K-wD-HtS"/>
+                        <outletCollection property="buttons" destination="aB5-9g-kdT" collectionClass="NSMutableArray" id="4uh-0f-4qk"/>
+                        <outletCollection property="buttons" destination="4k1-jj-aY4" collectionClass="NSMutableArray" id="mYi-yl-f3w"/>
+                        <outletCollection property="buttons" destination="hyw-7j-Fri" collectionClass="NSMutableArray" id="k0n-Ay-fDs"/>
+                        <outletCollection property="buttons" destination="IpT-pc-eM1" collectionClass="NSMutableArray" id="clh-Zh-GFU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m3W-Mg-Uje" sceneMemberID="firstResponder"/>
@@ -750,7 +770,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="310"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cWa-CD-T4e" id="aTg-Qa-Ht5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="309.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="image6" translatesAutoresizingMaskIntoConstraints="NO" id="KBB-L9-Rev">

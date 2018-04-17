@@ -57,6 +57,7 @@ class HomeController: UIViewController {
     }
     @IBAction func weatherButtonClick(_ sender: Any) {
         self.buttons[0].shake()
+        
     }
     @IBAction func alertButtonClick(_ sender: Any) {
         expandAlertButton()

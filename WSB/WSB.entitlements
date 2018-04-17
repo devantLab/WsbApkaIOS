@@ -5,6 +5,7 @@
 	<key>keychain-access-groups</key>
 	<array>
 		<string>$(AppIdentifierPrefix)pl.devant.WSB</string>
+		<string>$(AppIdentifierPrefix)pl.devant.WSBNotify</string>
 	</array>
 </dict>
 </plist>

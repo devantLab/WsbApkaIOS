@@ -10,4 +10,6 @@ target 'WSB' do
     pod 'Fire'
     pod 'Firebase'
     pod 'Firebase/Database'
+    pod 'GoogleMaps'
+    pod 'GooglePlaces'
 end

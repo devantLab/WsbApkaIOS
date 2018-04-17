@@ -7,29 +7,66 @@
 //
 
 import UIKit
+import GoogleMaps
+import MapKit
+import SDWebImage
 
 class EventDetailController: UIViewController {
+    var eventTitle: String?
+    var eventDescription: String?
+    var eventDate: String?
+    var eventTime: String?
+    var eventCity: String?
+    var eventStreet: String?
+    var eventImageURL: String?
+    //Coordinate
+    var coordinates = [String: Double]()
+    @IBOutlet weak private var imageView: UIImageView!
+    @IBOutlet weak private var mapView: MKMapView!
+    @IBOutlet weak private var titleLabel: UILabel!
+    @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak private var timeLabel: UILabel!
+    @IBOutlet weak private var cityLabel: UILabel!
+    @IBOutlet weak private var streetLabel: UILabel!
 
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setContent()
+        loadImage()
+        loadMap()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    private func loadImage() {
+        imageView.sd_setImage(with: URL(string: eventImageURL!), placeholderImage: UIImage(named: "placeholder.png"))
+
+    }
+    private func setContent() {
+        titleLabel.text = eventTitle
+        dateLabel.text = eventDate
+        timeLabel.text = eventTime
+        cityLabel.text = eventCity
+        streetLabel.text = eventStreet
+    }
+    private func loadMap() {
+        let initialLocation: CLLocation = CLLocation(latitude: coordinates["latitude"]!, longitude: coordinates["longitude"]!)
+        centerMapOnLocation(location: initialLocation)
+        let artwork = Artwork(title: eventTitle ?? "",
+                              locationName: "\(String(describing: eventCity)), \(String(describing: eventStreet))",
+            coordinate: CLLocationCoordinate2D(latitude: initialLocation.coordinate.latitude, longitude: initialLocation.coordinate.longitude))
+        mapView.addAnnotation(artwork)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func centerMapOnLocation(location: CLLocation) {
+        let regionRadius: CLLocationDistance = 1000
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+                                                                  regionRadius, regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
-    */
-
 }

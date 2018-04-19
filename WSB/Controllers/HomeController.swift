@@ -11,6 +11,7 @@ import ForecastIO
 import Firebase
 class HomeController: UIViewController {
 
+   
     @IBOutlet weak var expandableView: UIView!
     @IBOutlet weak var alertView: UIView!
     @IBOutlet weak var weatherView: UIView!
@@ -114,6 +115,9 @@ class HomeController: UIViewController {
         activityView.hidesWhenStopped = true
         activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
         activityView.startAnimating()
+    }
+    @IBAction func openSideMenu(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
     }
     
 }

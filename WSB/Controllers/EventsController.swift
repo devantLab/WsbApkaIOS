@@ -31,13 +31,13 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.refreshControl = self.refresher
-        
+        loadEvents()
         
         
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadEvents()
+        
     }
     @objc func loadEvents() {
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
@@ -51,7 +51,6 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let eventsRef = rootRef.child("events")
         
         eventsRef.observe(DataEventType.childAdded, with: {(snapshot) in
-            
             if let dict = snapshot.value as? [String: Any] {
                 let id: Int = dict["event_id"] as! Int
                 let title: String = dict["event_title"] as! String

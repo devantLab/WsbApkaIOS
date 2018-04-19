@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ORx-v4-mHX">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -393,7 +393,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ar7-L0-1qd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gpQ-nF-o1Y"/>
+                    <navigationItem key="navigationItem" id="gpQ-nF-o1Y">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Who-xr-QF6">
+                            <connections>
+                                <action selector="openSideMenu:" destination="9pv-A4-QxB" id="SDg-ND-bak"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="alertArrow" destination="jFP-RL-EwO" id="zTh-HC-GHU"/>
                         <outlet property="alertButton" destination="m30-Gu-Ss0" id="v3Z-Hi-M7f"/>
@@ -454,6 +460,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2214" y="-562"/>
+        </scene>
+        <!--Container Controller-->
+        <scene sceneID="sZm-uv-gJb">
+            <objects>
+                <viewController id="ORx-v4-mHX" customClass="ContainerController" customModule="WSB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uG2-L3-OGc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yf-yx-L9n">
+                                <rect key="frame" x="-300" y="0.0" width="300" height="812"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="I4f-SB-6gq"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="bbh-Fs-ORQ" kind="embed" id="mZb-n5-tyS"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7f-db-ub2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <connections>
+                                    <segue destination="49e-Tb-3d3" kind="embed" id="l5M-Rf-5Vh"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="u7f-db-ub2" secondAttribute="bottom" id="27Y-Bh-kby"/>
+                            <constraint firstItem="u7f-db-ub2" firstAttribute="width" secondItem="uG2-L3-OGc" secondAttribute="width" id="5F7-My-iFx"/>
+                            <constraint firstItem="3yf-yx-L9n" firstAttribute="leading" secondItem="ozX-N9-HYG" secondAttribute="leading" constant="-300" id="6R5-KO-zhH"/>
+                            <constraint firstItem="u7f-db-ub2" firstAttribute="leading" secondItem="3yf-yx-L9n" secondAttribute="trailing" id="6Si-uL-NSJ"/>
+                            <constraint firstItem="3yf-yx-L9n" firstAttribute="top" secondItem="uG2-L3-OGc" secondAttribute="top" id="F3t-6h-9K6"/>
+                            <constraint firstItem="u7f-db-ub2" firstAttribute="top" secondItem="uG2-L3-OGc" secondAttribute="top" id="l5P-rh-gsl"/>
+                            <constraint firstAttribute="bottom" secondItem="3yf-yx-L9n" secondAttribute="bottom" id="mRI-xe-IHJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ozX-N9-HYG"/>
+                    </view>
+                    <connections>
+                        <outlet property="sideMenuConstraint" destination="6R5-KO-zhH" id="ExP-Gu-5nX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jV5-pm-1RW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="lQM-cx-TLF">
+                    <connections>
+                        <action selector="swipe:" destination="ORx-v4-mHX" id="O5G-RY-UKe"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1670" y="0.0"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="XWg-9Z-9Mi">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Law-tX-PrM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="bbh-Fs-ORQ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VMN-Ph-kec">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" red="0.1176470588" green="0.51372549020000002" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wsb_gdansk" id="5ZX-qI-7l9">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <sections>
+                            <tableViewSection headerTitle="Section-1" id="v5x-sn-tAU">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="IMp-wW-pGJ">
+                                        <rect key="frame" x="0.0" y="178" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IMp-wW-pGJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="W1c-EV-mRD">
+                                        <rect key="frame" x="0.0" y="222" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W1c-EV-mRD">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Y2T-Dv-VTV">
+                                        <rect key="frame" x="0.0" y="266" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y2T-Dv-VTV">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="bbh-Fs-ORQ" id="R3s-uo-Dbo"/>
+                            <outlet property="delegate" destination="bbh-Fs-ORQ" id="AbG-3E-qAG"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="-920" y="727.83251231527095"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -538,6 +647,17 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7uP-Vh-Z7I">
                                                         <rect key="frame" x="0.0" y="78" width="359" height="62"/>
                                                         <subviews>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aB5-9g-kdT">
+                                                                <rect key="frame" x="0.0" y="0.0" width="359" height="62"/>
+                                                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="22"/>
+                                                                <inset key="contentEdgeInsets" minX="62" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                <state key="normal" title="Bankowość">
+                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="buttonClick:" destination="kHw-HD-EOH" eventType="touchUpInside" id="ka9-aK-C9F"/>
+                                                                </connections>
+                                                            </button>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-bank_building_filled" translatesAutoresizingMaskIntoConstraints="NO" id="qml-bV-n1o">
                                                                 <rect key="frame" x="16" y="16" width="30" height="30"/>
                                                                 <constraints>
@@ -552,17 +672,6 @@
                                                                     <constraint firstAttribute="width" constant="30" id="gEJ-MC-JLJ"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aB5-9g-kdT">
-                                                                <rect key="frame" x="0.0" y="0.0" width="359" height="62"/>
-                                                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="22"/>
-                                                                <inset key="contentEdgeInsets" minX="62" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                <state key="normal" title="Bankowość">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="buttonClick:" destination="kHw-HD-EOH" eventType="touchUpInside" id="ka9-aK-C9F"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.0" green="0.12549019610000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
@@ -1169,6 +1278,7 @@
         <image name="image6" width="600" height="600"/>
         <image name="infos" width="30" height="30"/>
         <image name="university" width="30" height="30"/>
+        <image name="wsb_gdansk" width="878" height="458"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2Fl-UQ-uuF"/>

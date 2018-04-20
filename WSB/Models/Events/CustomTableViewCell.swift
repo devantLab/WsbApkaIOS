@@ -13,10 +13,11 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventTitle: UILabel!
-    @IBOutlet weak var eventDescription: UILabel!
+    @IBOutlet weak var eventPlace: UILabel!
     @IBOutlet weak var eventMonth: UILabel!
     @IBOutlet weak var eventDay: UILabel!
     @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var eventTime: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

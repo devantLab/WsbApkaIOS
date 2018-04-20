@@ -892,10 +892,10 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAJ-ja-t1m">
                                                     <rect key="frame" x="15" y="225" width="345" height="74"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Zapraszamy wszystkich zainteresowanych na kocert Żabsona!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzP-xh-7uY">
-                                                            <rect key="frame" x="54" y="30" width="283" height="36"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" red="0.56078431370000004" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Gdańsk ul. Długa 25" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzP-xh-7uY">
+                                                            <rect key="frame" x="54" y="35" width="283" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6l-B3-QfK">
@@ -937,23 +937,31 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Koncert Żabsona" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmT-Ph-i8R">
-                                                            <rect key="frame" x="54" y="0.0" width="283" height="27"/>
+                                                            <rect key="frame" x="54" y="8" width="283" height="27"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                             <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="19:00 - 21:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-UP-ksd">
+                                                            <rect key="frame" x="54" y="52" width="283" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.56078431370000004" green="0.56078431370000004" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="KzP-xh-7uY" firstAttribute="top" secondItem="gmT-Ph-i8R" secondAttribute="bottom" id="5hw-Xp-ANB"/>
+                                                        <constraint firstItem="cVc-UP-ksd" firstAttribute="top" secondItem="KzP-xh-7uY" secondAttribute="bottom" id="8WO-IY-OLj"/>
                                                         <constraint firstItem="KzP-xh-7uY" firstAttribute="leading" secondItem="Y6l-B3-QfK" secondAttribute="trailing" constant="8" id="AG6-IZ-CNJ"/>
-                                                        <constraint firstItem="gmT-Ph-i8R" firstAttribute="top" secondItem="UAJ-ja-t1m" secondAttribute="top" id="AdC-iD-yhq"/>
-                                                        <constraint firstItem="KzP-xh-7uY" firstAttribute="top" secondItem="gmT-Ph-i8R" secondAttribute="bottom" constant="3" id="CGN-NA-87i"/>
                                                         <constraint firstItem="gmT-Ph-i8R" firstAttribute="leading" secondItem="Y6l-B3-QfK" secondAttribute="trailing" constant="8" id="DSz-BO-i0e"/>
                                                         <constraint firstAttribute="height" constant="74" id="Lcb-kl-rGJ"/>
                                                         <constraint firstItem="Y6l-B3-QfK" firstAttribute="top" secondItem="UAJ-ja-t1m" secondAttribute="top" constant="8" id="NcT-6k-uSk"/>
+                                                        <constraint firstItem="gmT-Ph-i8R" firstAttribute="top" secondItem="UAJ-ja-t1m" secondAttribute="top" constant="8" id="RTn-uL-Kdb"/>
+                                                        <constraint firstItem="cVc-UP-ksd" firstAttribute="leading" secondItem="Y6l-B3-QfK" secondAttribute="trailing" constant="8" id="bpq-wv-Abc"/>
                                                         <constraint firstAttribute="trailing" secondItem="KzP-xh-7uY" secondAttribute="trailing" constant="8" id="dK3-Uh-4Wl"/>
                                                         <constraint firstAttribute="trailing" secondItem="gmT-Ph-i8R" secondAttribute="trailing" constant="8" id="f8v-8r-dN5"/>
-                                                        <constraint firstItem="gmT-Ph-i8R" firstAttribute="top" secondItem="UAJ-ja-t1m" secondAttribute="top" id="ge6-kK-Xdc"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cVc-UP-ksd" secondAttribute="trailing" constant="8" id="wuA-tt-wv2"/>
                                                         <constraint firstItem="Y6l-B3-QfK" firstAttribute="leading" secondItem="UAJ-ja-t1m" secondAttribute="leading" id="yW0-bv-lTC"/>
                                                     </constraints>
                                                 </view>
@@ -977,9 +985,10 @@
                                             <outlet property="cellView" destination="aTg-Qa-Ht5" id="LbX-EE-GEL"/>
                                             <outlet property="dateView" destination="Y6l-B3-QfK" id="QI3-9t-GUx"/>
                                             <outlet property="eventDay" destination="bOZ-FB-Tyv" id="JCG-vy-Muj"/>
-                                            <outlet property="eventDescription" destination="KzP-xh-7uY" id="65H-NI-rl3"/>
                                             <outlet property="eventImage" destination="KBB-L9-Rev" id="mfo-UP-UZ3"/>
                                             <outlet property="eventMonth" destination="BNh-rW-ICl" id="PRB-I3-qc0"/>
+                                            <outlet property="eventPlace" destination="KzP-xh-7uY" id="uXw-kO-YaJ"/>
+                                            <outlet property="eventTime" destination="cVc-UP-ksd" id="YxN-pV-JfX"/>
                                             <outlet property="eventTitle" destination="gmT-Ph-i8R" id="2ND-4i-M1k"/>
                                         </connections>
                                     </tableViewCell>
@@ -1281,6 +1290,6 @@
         <image name="wsb_gdansk" width="878" height="458"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2Fl-UQ-uuF"/>
+        <segue reference="OL6-xG-loC"/>
     </inferredMetricsTieBreakers>
 </document>

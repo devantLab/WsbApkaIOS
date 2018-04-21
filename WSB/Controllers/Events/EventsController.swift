@@ -96,7 +96,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
-        cell.eventMonth.text = monthName(month: month)
+        cell.eventMonth.text = MonthConverter.monthName(month: month, language: "ru")
         cell.eventDay.text = String(day)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.eventImage.round(corners: .allCorners, radius: 10)
@@ -119,7 +119,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
             let hour = calendar.component(.hour, from: date)
             let minute = calendar.component(.minute, from: date)
             destination.eventTitle = event.eventTitle
-            destination.eventDate = "\(day) \(monthName(month: month)) \(year)"
+            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "ru")) \(year)"
             destination.eventTime = "\(hour):\(minute)"
             destination.eventCity = event.eventCity
             destination.eventStreet = event.eventStreet
@@ -130,37 +130,6 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     
-    // MARK: MONTHNAME METHOD
-    func monthName(month: Int) -> String {
-        switch month {
-        case 1:
-            return "Jan."
-        case 2:
-            return "Feb."
-        case 3:
-            return "Mar."
-        case 4:
-            return "Apr."
-        case 5:
-            return "May"
-        case 6:
-            return "June"
-        case 7:
-            return "July"
-        case 8:
-            return "Aug."
-        case 9:
-            return "Sept."
-        case 10:
-            return "Oct."
-        case 11:
-            return "Nov."
-        case 12:
-            return "Dec."
-        default:
-            return "Error"
-        }
-    }
     func stringToDateFormat(term: String) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"

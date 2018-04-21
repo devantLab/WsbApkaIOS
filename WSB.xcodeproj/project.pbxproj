@@ -28,6 +28,7 @@
 		18C5657E20780A1900A97C27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5657D20780A1900A97C27 /* Constants.swift */; };
 		18F385092085D4F600B9B8C6 /* roboto in Resources */ = {isa = PBXBuildFile; fileRef = 18F385082085D4F600B9B8C6 /* roboto */; };
 		18F3850D2087D2C900B9B8C6 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3850C2087D2C900B9B8C6 /* ContainerController.swift */; };
+		18F3850F208B80F800B9B8C6 /* MonthConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3850E208B80F800B9B8C6 /* MonthConverter.swift */; };
 		8291F753A4969CF9E2AA7E5F /* Pods_WSB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 109B7D31E5168FB5BF7C9E08 /* Pods_WSB.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		18C5657D20780A1900A97C27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18F385082085D4F600B9B8C6 /* roboto */ = {isa = PBXFileReference; lastKnownFileType = folder; name = roboto; path = ../../../../../Downloads/roboto; sourceTree = "<group>"; };
 		18F3850C2087D2C900B9B8C6 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
+		18F3850E208B80F800B9B8C6 /* MonthConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthConverter.swift; sourceTree = "<group>"; };
 		933B420CBD16CE8AEB283F07 /* Pods-WSB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WSB/Pods-WSB.debug.xcconfig"; sourceTree = "<group>"; };
 		F07FFDEC9BB5AB66DBC3EF15 /* Pods-WSB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WSB.release.xcconfig"; path = "Pods/Target Support Files/Pods-WSB/Pods-WSB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,13 +113,12 @@
 			isa = PBXGroup;
 			children = (
 				180B843E206DAAC900C44334 /* MainController.swift */,
-				180B842C206DA85E00C44334 /* HomeController.swift */,
-				180B842E206DA85E00C44334 /* UniversityController.swift */,
-				180B8442206DB2BC00C44334 /* EventsController.swift */,
-				180B8444206DB32000C44334 /* InfosController.swift */,
-				188A8DEB2081238F004A31B6 /* EventDetailController.swift */,
 				188A8DED2081F46D004A31B6 /* NavigationController.swift */,
-				18F3850C2087D2C900B9B8C6 /* ContainerController.swift */,
+				18F38514208B8E4100B9B8C6 /* SideMenu */,
+				18F38510208B8DDD00B9B8C6 /* Home */,
+				18F38511208B8E0000B9B8C6 /* University */,
+				18F38513208B8E1C00B9B8C6 /* Events */,
+				18F38512208B8E1500B9B8C6 /* Infos */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -128,6 +129,7 @@
 				180D7417207B4C2E0033C139 /* Config */,
 				182060462076AE15006834FD /* Events */,
 				18A7ECFA20836C9B006E9EEC /* Artwork.swift */,
+				18F3850E208B80F800B9B8C6 /* MonthConverter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -168,6 +170,47 @@
 				182060472076AE7D006834FD /* EventsPicker.swift */,
 			);
 			path = Events;
+			sourceTree = "<group>";
+		};
+		18F38510208B8DDD00B9B8C6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				180B842C206DA85E00C44334 /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		18F38511208B8E0000B9B8C6 /* University */ = {
+			isa = PBXGroup;
+			children = (
+				180B842E206DA85E00C44334 /* UniversityController.swift */,
+			);
+			path = University;
+			sourceTree = "<group>";
+		};
+		18F38512208B8E1500B9B8C6 /* Infos */ = {
+			isa = PBXGroup;
+			children = (
+				180B8444206DB32000C44334 /* InfosController.swift */,
+			);
+			path = Infos;
+			sourceTree = "<group>";
+		};
+		18F38513208B8E1C00B9B8C6 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				180B8442206DB2BC00C44334 /* EventsController.swift */,
+				188A8DEB2081238F004A31B6 /* EventDetailController.swift */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		18F38514208B8E4100B9B8C6 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				18F3850C2087D2C900B9B8C6 /* ContainerController.swift */,
+			);
+			path = SideMenu;
 			sourceTree = "<group>";
 		};
 		2506563A8EB70B6B8F2790CA /* Pods */ = {
@@ -346,6 +389,7 @@
 				180B842F206DA85E00C44334 /* UniversityController.swift in Sources */,
 				188A8DEC2081238F004A31B6 /* EventDetailController.swift in Sources */,
 				180B842B206DA85E00C44334 /* AppDelegate.swift in Sources */,
+				18F3850F208B80F800B9B8C6 /* MonthConverter.swift in Sources */,
 				182060452076A64C006834FD /* Event.swift in Sources */,
 				180B842D206DA85E00C44334 /* HomeController.swift in Sources */,
 				189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */,

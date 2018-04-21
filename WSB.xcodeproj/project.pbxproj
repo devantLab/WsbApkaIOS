@@ -18,7 +18,6 @@
 		180B8445206DB32000C44334 /* InfosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B8444206DB32000C44334 /* InfosController.swift */; };
 		182060432075EB8E006834FD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060422075EB8E006834FD /* CustomTableViewCell.swift */; };
 		182060452076A64C006834FD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060442076A64C006834FD /* Event.swift */; };
-		182060482076AE7D006834FD /* EventsPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060472076AE7D006834FD /* EventsPicker.swift */; };
 		183637E0207DF9DD00551501 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183637DF207DF9DD00551501 /* GoogleService-Info.plist */; };
 		183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AD86C2072887C002AA213 /* ButtonExtension.swift */; };
 		188A8DEC2081238F004A31B6 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A8DEB2081238F004A31B6 /* EventDetailController.swift */; };
@@ -48,7 +47,6 @@
 		180B8444206DB32000C44334 /* InfosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfosController.swift; sourceTree = "<group>"; };
 		182060422075EB8E006834FD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		182060442076A64C006834FD /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
-		182060472076AE7D006834FD /* EventsPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsPicker.swift; sourceTree = "<group>"; };
 		182060492076B2AA006834FD /* WSB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WSB.entitlements; sourceTree = "<group>"; };
 		183637DF207DF9DD00551501 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		183AD86C2072887C002AA213 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
@@ -156,6 +154,7 @@
 		180D7418207B4F130033C139 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18F38515208BA55300B9B8C6 /* Fonts */,
 				18F385082085D4F600B9B8C6 /* roboto */,
 				180B8433206DA85E00C44334 /* Assets.xcassets */,
 			);
@@ -167,7 +166,6 @@
 			children = (
 				182060422075EB8E006834FD /* CustomTableViewCell.swift */,
 				182060442076A64C006834FD /* Event.swift */,
-				182060472076AE7D006834FD /* EventsPicker.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -211,6 +209,13 @@
 				18F3850C2087D2C900B9B8C6 /* ContainerController.swift */,
 			);
 			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		18F38515208BA55300B9B8C6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		2506563A8EB70B6B8F2790CA /* Pods */ = {
@@ -393,7 +398,6 @@
 				182060452076A64C006834FD /* Event.swift in Sources */,
 				180B842D206DA85E00C44334 /* HomeController.swift in Sources */,
 				189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */,
-				182060482076AE7D006834FD /* EventsPicker.swift in Sources */,
 				18A7ECFB20836C9B006E9EEC /* Artwork.swift in Sources */,
 				18F3850D2087D2C900B9B8C6 /* ContainerController.swift in Sources */,
 				183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */,

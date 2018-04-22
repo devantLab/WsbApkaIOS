@@ -9,17 +9,23 @@
 import UIKit
 
 class UniversityController: UIViewController {
-
+    @IBOutlet var views: [UIView]!
+    @IBOutlet var buttons: [UIButton]!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        views.forEach({view in
+            view.round(corners: .allCorners, radius: 10)
+        })
+        
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    @IBAction func buttonClick(_ sender: UIButton) {
+        sender.flash()
+        
+    }
 
 }
 

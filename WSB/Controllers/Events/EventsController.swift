@@ -49,7 +49,6 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         activityView.startAnimating()
         self.view.addSubview(activityView)
         let eventsRef = rootRef.child("Events")
-        
         eventsRef.observe(DataEventType.childAdded, with: {(snapshot) in
             if let dict = snapshot.value as? [String: Any] {
                 let id: Int = dict["eventId"] as! Int
@@ -96,7 +95,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
-        cell.eventMonth.text = MonthConverter.monthName(month: month, language: "ru")
+        cell.eventMonth.text = MonthConverter.monthName(month: month, language: "pl")
         cell.eventDay.text = String(day)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.eventImage.round(corners: .allCorners, radius: 10)
@@ -119,7 +118,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
             let hour = calendar.component(.hour, from: date)
             let minute = calendar.component(.minute, from: date)
             destination.eventTitle = event.eventTitle
-            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "ru")) \(year)"
+            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "pl")) \(year)"
             destination.eventTime = "\(hour):\(minute)"
             destination.eventCity = event.eventCity
             destination.eventStreet = event.eventStreet

@@ -66,7 +66,7 @@
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Zapraszamy wszystkich zainteresowanych na koncert Żabsona!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndk-Ye-AVD">
                                                                         <rect key="frame" x="66" y="47.666666666666657" width="237" height="62.333333333333343"/>
-                                                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -144,7 +144,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcm-0p-knD">
-                                                                <rect key="frame" x="65.999999999999986" y="20" width="175.66666666666663" height="25.666666666666671"/>
+                                                                <rect key="frame" x="66" y="20" width="277" height="25.666666666666671"/>
                                                                 <attributedString key="attributedText">
                                                                     <fragment content="Gdańsk">
                                                                         <attributes>
@@ -163,14 +163,14 @@
                                                                     <constraint firstAttribute="height" constant="50" id="Ruw-JE-BoT"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-Sh-9Tk">
-                                                                <rect key="frame" x="66.000000000000014" y="47.666666666666686" width="175.33333333333337" height="62.333333333333343"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Loading..." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-Sh-9Tk">
+                                                                <rect key="frame" x="66" y="47.666666666666686" width="276.66666666666669" height="62.333333333333343"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-54@" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX7-nv-vS1">
-                                                                <rect key="frame" x="249.66666666666671" y="20" width="101.33333333333334" height="48"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xX7-nv-vS1">
+                                                                <rect key="frame" x="350.33333333333331" y="35" width="0.0" height="0.0"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -188,7 +188,7 @@
                                                             <constraint firstItem="oP0-LK-G39" firstAttribute="top" secondItem="1qp-eG-Zix" secondAttribute="top" constant="20" id="aD7-Q1-OFm"/>
                                                             <constraint firstItem="Mcm-0p-knD" firstAttribute="leading" secondItem="oP0-LK-G39" secondAttribute="trailing" constant="8" id="bFf-m3-yao"/>
                                                             <constraint firstItem="oP0-LK-G39" firstAttribute="leading" secondItem="1qp-eG-Zix" secondAttribute="leading" constant="8" id="dY0-4V-rAR"/>
-                                                            <constraint firstItem="xX7-nv-vS1" firstAttribute="top" secondItem="1qp-eG-Zix" secondAttribute="top" constant="20" id="lYZ-sf-YwI"/>
+                                                            <constraint firstItem="xX7-nv-vS1" firstAttribute="top" secondItem="1qp-eG-Zix" secondAttribute="top" constant="35" id="lYZ-sf-YwI"/>
                                                             <constraint firstAttribute="bottom" secondItem="0EH-3S-aDa" secondAttribute="bottom" id="p9Z-Ne-Jr3"/>
                                                             <constraint firstAttribute="bottom" secondItem="r0n-Sh-9Tk" secondAttribute="bottom" constant="8" id="p9z-MG-F7C"/>
                                                             <constraint firstItem="0EH-3S-aDa" firstAttribute="top" secondItem="1qp-eG-Zix" secondAttribute="top" id="v0i-2R-tbe"/>
@@ -208,17 +208,10 @@
                                                                     <segue destination="coW-Fm-etM" kind="show" id="2Fl-UQ-uuF"/>
                                                                 </connections>
                                                             </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqO-EV-Wxr">
-                                                                <rect key="frame" x="66" y="20" width="237" height="25.666666666666671"/>
-                                                                <attributedString key="attributedText">
-                                                                    <fragment content="Koncert Żabsona">
-                                                                        <attributes>
-                                                                            <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                            <font key="NSFont" size="22" name=".SFNSDisplay"/>
-                                                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                        </attributes>
-                                                                    </fragment>
-                                                                </attributedString>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqO-EV-Wxr">
+                                                                <rect key="frame" x="66" y="20" width="237" height="0.0"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icons8-right_4" translatesAutoresizingMaskIntoConstraints="NO" id="nF9-Eu-N0l">
@@ -228,8 +221,8 @@
                                                                     <constraint firstAttribute="width" constant="40" id="oyP-kj-Eeb"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Zapraszamy wszystkich zainteresowanych na koncert Żabsona!" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahu-GM-dZG">
-                                                                <rect key="frame" x="66" y="47.666666666666629" width="237" height="62.333333333333343"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Loading..." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahu-GM-dZG">
+                                                                <rect key="frame" x="66" y="22" width="237" height="88"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -301,7 +294,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHr-p7-M1k">
                                                                 <rect key="frame" x="66" y="47.666666666666629" width="237" height="62.333333333333343"/>
                                                                 <string key="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</string>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -371,6 +364,7 @@
                         <viewLayoutGuide key="safeArea" id="ar7-L0-1qd"/>
                     </view>
                     <navigationItem key="navigationItem" title="WSB Notify" id="gpQ-nF-o1Y">
+                        <barButtonItem key="backBarButtonItem" title=" " id="0lA-4c-wGJ"/>
                         <barButtonItem key="leftBarButtonItem" title="Menu" image="events" id="Who-xr-QF6">
                             <connections>
                                 <action selector="openSideMenu:" destination="9pv-A4-QxB" id="SDg-ND-bak"/>
@@ -1167,7 +1161,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="310"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cWa-CD-T4e" id="aTg-Qa-Ht5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="309.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="image6" translatesAutoresizingMaskIntoConstraints="NO" id="KBB-L9-Rev">

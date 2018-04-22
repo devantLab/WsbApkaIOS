@@ -32,11 +32,13 @@ class HomeController: UIViewController {
     var weatherDescriptionText = "Wystąpił błąd podczas aktualizacji pogody"
     var weatherTemperatureText = ":("
     private let rootRef = Database.database().reference()
+    var event: Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layoutIfNeeded()
         getEvent()
+        
         //button cornerRadius
         alertView.round(corners: .allCorners, radius: 10)
         expandableView.round(corners: [.bottomLeft, .bottomRight], radius: 10)
@@ -45,7 +47,7 @@ class HomeController: UIViewController {
         }
         
         expandableView.round(corners: [.bottomLeft, .bottomRight], radius: 10)
-        
+        self.buttons[2].isEnabled = false
         self.view.setNeedsDisplay()
         //hiding the expandableView
         self.expandableViewConstraint.constant = 0
@@ -117,13 +119,35 @@ class HomeController: UIViewController {
         eventsRef.observe(DataEventType.childAdded, with: {(snapshot) in
             if let dict = snapshot.value as? [String: Any] {
                 let event: Event = EventDataParser.parse(dict: dict)
+                self.event = event
                 DispatchQueue.main.async {
                     self.eventTitle.text = event.eventTitle
                     self.eventDescription.text = event.eventDescription
-                    
+                    // buttons[2] -> Event Button
+                    self.buttons[2].isEnabled = true
                 }
             }
         })
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? EventDetailController {
+            let event = self.event
+            let calendar = Calendar.current
+            let date = event?.eventDate
+            let year = calendar.component(.year, from: date!)
+            let month = calendar.component(.month, from: date!)
+            let day = calendar.component(.day, from: date!)
+            destination.eventTitle = event?.eventTitle
+            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "pl")) \(year)"
+            let time: String = (event!.eventTimeEnd.elementsEqual("0")) ? "\(event!.eventTimeStart)" : "\(event!.eventTimeStart) - \(event!.eventTimeEnd)"
+            destination.eventTime = "\(time)"
+            destination.eventCity = event?.eventCity
+            destination.eventStreet = event?.eventStreet
+            destination.eventImageURL = event?.eventImage
+            destination.eventDescription = event?.eventDescription
+            destination.coordinates = ["latitude": event?.eventLatitude, "longitude": event?.eventLongitude] as! [String : Double]
+            
+        }
     }
    
     @IBAction func openSideMenu(_ sender: Any) {

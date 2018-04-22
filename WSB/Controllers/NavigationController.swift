@@ -12,7 +12,7 @@ class NavigationController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(named: "sciana_ios_414x86")!.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
+        //UINavigationBar.appearance().setBackgroundImage(UIImage(named: "sciana_ios_414x86")!.resizableImage(withCapInsets: UIEdgeInsets.zero, resizingMode: .stretch), for: .default)
         // Do any additional setup after loading the view.
     }
 

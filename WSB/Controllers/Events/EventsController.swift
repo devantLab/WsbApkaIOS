@@ -48,19 +48,29 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         activityView.color = tabBarController?.tabBar.barTintColor
         activityView.startAnimating()
         self.view.addSubview(activityView)
-        let eventsRef = rootRef.child("events")
+        let eventsRef = rootRef.child("Events")
         
         eventsRef.observe(DataEventType.childAdded, with: {(snapshot) in
             if let dict = snapshot.value as? [String: Any] {
-                let id: Int = dict["event_id"] as! Int
-                let title: String = dict["event_title"] as! String
-                let description: String = dict["event_description"] as! String
-                let term: String = dict["event_term"] as! String
-                let date = self.stringToDateFormat(term: term)
-                let place: String = dict["event_place"] as! String
-                let imageURL: String = dict["event_image_url"] as! String
-                let clicks: Int = dict["event_clicks"] as! Int
-                let event = Event(id: id, title: title, description: description, term: date, place: place, imageURL: imageURL, clicks: clicks)
+                let id: Int = dict["eventId"] as! Int
+                let title: String = dict["eventTitle"] as! String
+                let description: String = dict["eventDescription"] as! String
+                let dateString: String = dict["eventDate"] as! String
+                let date = self.stringToDateFormat(term: dateString)
+                let timeStart: String = dict["eventTimeStart"] as! String
+                let timeEnd: String = dict["eventTimeEnd"] as! String
+                let image: String = dict["eventImage"] as! String
+                let clicks: String = dict["eventClicks"] as! String
+                let clicksInt: Int = Int(clicks)!
+                let isWsbEvent: Bool = dict["eventIsWSB"] as! Bool
+                let link: String = dict["eventLink"] as! String
+                let city: String = dict["eventCity"] as! String
+                let street: String = dict["eventStreet"] as! String
+                let latitude: String = dict["eventLatitude"] as! String
+                let longitude: String = dict["eventLongitude"] as! String
+                let latitudeD: Double = Double(latitude)!
+                let longitudeD: Double = Double(longitude)!
+                let event = Event(id: id, title: title, description: description, city: city, street: street, date: date, timeStart: timeStart, timeEnd: timeEnd, clicks: clicksInt, isWsbEvent: isWsbEvent, link: link, image: image, latitude: latitudeD, longitude: longitudeD)
                 self.events.append(event)
                 self.tableView.reloadData()
             }
@@ -79,13 +89,14 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
         let event = events[indexPath.row]
         cell.eventTitle?.text = event.eventTitle
-        cell.eventDescription?.text = event.eventDescription
-        cell.eventImage.sd_setImage(with: URL(string: event.eventImageURL), placeholderImage: UIImage(named: "placeholder.png"))
-        let date = event.eventTerm
+        cell.eventPlace?.text = "\(event.eventCity), \(event.eventStreet)"
+        cell.eventTime?.text = event.eventTimeEnd == "0" ? "\(event.eventTimeStart)" : "\(event.eventTimeStart) - \(event.eventTimeEnd)"
+        cell.eventImage.sd_setImage(with: URL(string: event.eventImage), placeholderImage: UIImage(named: "placeholder.png"))
+        let date = event.eventDate
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
-        cell.eventMonth.text = monthName(month: month)
+        cell.eventMonth.text = MonthConverter.monthName(month: month, language: "ru")
         cell.eventDay.text = String(day)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.eventImage.round(corners: .allCorners, radius: 10)
@@ -101,63 +112,27 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         if let destination = segue.destination as? EventDetailController {
             let event = events[(tableView.indexPathForSelectedRow?.row)!]
             let calendar = Calendar.current
-            let date = event.eventTerm
+            let date = event.eventDate
             let year = calendar.component(.year, from: date)
             let month = calendar.component(.month, from: date)
             let day = calendar.component(.day, from: date)
             let hour = calendar.component(.hour, from: date)
             let minute = calendar.component(.minute, from: date)
             destination.eventTitle = event.eventTitle
-            destination.eventDate = "\(day) \(monthName(month: month)) \(year)"
+            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "ru")) \(year)"
             destination.eventTime = "\(hour):\(minute)"
-            
-            // TODO: trim city and street
-            destination.eventCity = event.eventPlace
-            // destination.eventStreet = ?
-            
-            destination.eventImageURL = event.eventImageURL
+            destination.eventCity = event.eventCity
+            destination.eventStreet = event.eventStreet
+            destination.eventImageURL = event.eventImage
             destination.eventDescription = event.eventDescription
+            destination.coordinates = ["latitude": event.eventLatitude, "longitude": event.eventLongitude]
             
-            // TODO: coordinates
-            //destination.coordinates = ["latitude": event.coordinate["latitude"], "longitude": event.coordinate["longitude"]]
-            destination.coordinates = ["latitude": 40.730610, "longitude": -73.935242]
         }
     }
     
-    // MARK: MONTHNAME METHOD
-    func monthName(month: Int) -> String {
-        switch month {
-        case 1:
-            return "Jan."
-        case 2:
-            return "Feb."
-        case 3:
-            return "Mar."
-        case 4:
-            return "Apr."
-        case 5:
-            return "May"
-        case 6:
-            return "June"
-        case 7:
-            return "July"
-        case 8:
-            return "Aug."
-        case 9:
-            return "Sept."
-        case 10:
-            return "Oct."
-        case 11:
-            return "Nov."
-        case 12:
-            return "Dec."
-        default:
-            return "Error"
-        }
-    }
     func stringToDateFormat(term: String) -> Date {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        dateFormatter.dateFormat = "dd-MM-yyyy"
         dateFormatter.timeZone = TimeZone(identifier:"GMT")
         let date = dateFormatter.date(from: term)!
         return date

@@ -24,16 +24,21 @@ class HomeController: UIViewController {
     @IBOutlet weak var weatherDescription: UILabel!
     @IBOutlet weak var weatherTemperature: UILabel!
     
+    @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var eventDescription: UILabel!
     @IBOutlet weak var expandableViewConstraint: NSLayoutConstraint!
     
     let client = DarkSkyClient(apiKey: Constants.FORECAST_API_KEY)
-    let activityView = UIActivityIndicatorView()
     var weatherDescriptionText = "Wystąpił błąd podczas aktualizacji pogody"
     var weatherTemperatureText = ":("
+    private let rootRef = Database.database().reference()
+    var event: Event?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingForecast()
         view.layoutIfNeeded()
+        getEvent()
+        
         //button cornerRadius
         alertView.round(corners: .allCorners, radius: 10)
         expandableView.round(corners: [.bottomLeft, .bottomRight], radius: 10)
@@ -42,7 +47,7 @@ class HomeController: UIViewController {
         }
         
         expandableView.round(corners: [.bottomLeft, .bottomRight], radius: 10)
-        
+        self.buttons[2].isEnabled = false
         self.view.setNeedsDisplay()
         //hiding the expandableView
         self.expandableViewConstraint.constant = 0
@@ -98,24 +103,53 @@ class HomeController: UIViewController {
                     self.weatherDescription.text = currentForecast.currently?.summary
                     let temperature: Int = Int((currentForecast.currently?.temperature)!)
                     self.weatherTemperature.text = String(temperature) + "°"
-                    self.activityView.stopAnimating()
                 }
                 
             case .failure(_):
                 DispatchQueue.main.async {
                     self.weatherDescription.text = self.weatherDescriptionText
                     self.weatherTemperature.text = self.weatherTemperatureText
-                    self.activityView.stopAnimating()
+                    
                 }
             }
         }
     }
-    func loadingForecast() {
-        activityView.center = weatherView.center
-        activityView.hidesWhenStopped = true
-        activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-        activityView.startAnimating()
+    func getEvent() {
+        let eventsRef = rootRef.child("Events").queryLimited(toFirst: 1)
+        eventsRef.observe(DataEventType.childAdded, with: {(snapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                let event: Event = EventDataParser.parse(dict: dict)
+                self.event = event
+                DispatchQueue.main.async {
+                    self.eventTitle.text = event.eventTitle
+                    self.eventDescription.text = event.eventDescription
+                    // buttons[2] -> Event Button
+                    self.buttons[2].isEnabled = true
+                }
+            }
+        })
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? EventDetailController {
+            let event = self.event
+            let calendar = Calendar.current
+            let date = event?.eventDate
+            let year = calendar.component(.year, from: date!)
+            let month = calendar.component(.month, from: date!)
+            let day = calendar.component(.day, from: date!)
+            destination.eventTitle = event?.eventTitle
+            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "pl")) \(year)"
+            let time: String = (event!.eventTimeEnd.elementsEqual("0")) ? "\(event!.eventTimeStart)" : "\(event!.eventTimeStart) - \(event!.eventTimeEnd)"
+            destination.eventTime = "\(time)"
+            destination.eventCity = event?.eventCity
+            destination.eventStreet = event?.eventStreet
+            destination.eventImageURL = event?.eventImage
+            destination.eventDescription = event?.eventDescription
+            destination.coordinates = ["latitude": event?.eventLatitude, "longitude": event?.eventLongitude] as! [String : Double]
+            
+        }
+    }
+   
     @IBAction func openSideMenu(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
     }

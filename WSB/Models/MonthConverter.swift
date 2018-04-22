@@ -13,13 +13,13 @@ class MonthConverter {
     // MARK: ENGLISH
     static func monthName(month: Int, language: String) -> String {
         var monthName: String = ""
-        if language == "pl" {
+        if language.elementsEqual("pl") {
             monthName = polishMonthName(month: month)
         }
-        if language == "ru" {
+        if language.elementsEqual("ru") {
             monthName = russianMonthName(month: month)
         }
-        else if language == "en" {
+        else if language.elementsEqual("en") {
             monthName = englishMonthName(month: month)
         }
         return monthName

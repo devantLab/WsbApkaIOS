@@ -49,28 +49,9 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         activityView.startAnimating()
         self.view.addSubview(activityView)
         let eventsRef = rootRef.child("Events")
-        
         eventsRef.observe(DataEventType.childAdded, with: {(snapshot) in
             if let dict = snapshot.value as? [String: Any] {
-                let id: Int = dict["eventId"] as! Int
-                let title: String = dict["eventTitle"] as! String
-                let description: String = dict["eventDescription"] as! String
-                let dateString: String = dict["eventDate"] as! String
-                let date = self.stringToDateFormat(term: dateString)
-                let timeStart: String = dict["eventTimeStart"] as! String
-                let timeEnd: String = dict["eventTimeEnd"] as! String
-                let image: String = dict["eventImage"] as! String
-                let clicks: String = dict["eventClicks"] as! String
-                let clicksInt: Int = Int(clicks)!
-                let isWsbEvent: Bool = dict["eventIsWSB"] as! Bool
-                let link: String = dict["eventLink"] as! String
-                let city: String = dict["eventCity"] as! String
-                let street: String = dict["eventStreet"] as! String
-                let latitude: String = dict["eventLatitude"] as! String
-                let longitude: String = dict["eventLongitude"] as! String
-                let latitudeD: Double = Double(latitude)!
-                let longitudeD: Double = Double(longitude)!
-                let event = Event(id: id, title: title, description: description, city: city, street: street, date: date, timeStart: timeStart, timeEnd: timeEnd, clicks: clicksInt, isWsbEvent: isWsbEvent, link: link, image: image, latitude: latitudeD, longitude: longitudeD)
+                let event: Event = EventDataParser.parse(dict: dict)
                 self.events.append(event)
                 self.tableView.reloadData()
             }
@@ -96,7 +77,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
-        cell.eventMonth.text = MonthConverter.monthName(month: month, language: "ru")
+        cell.eventMonth.text = MonthConverter.monthName(month: month, language: "pl")
         cell.eventDay.text = String(day)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.eventImage.round(corners: .allCorners, radius: 10)
@@ -116,11 +97,10 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
             let year = calendar.component(.year, from: date)
             let month = calendar.component(.month, from: date)
             let day = calendar.component(.day, from: date)
-            let hour = calendar.component(.hour, from: date)
-            let minute = calendar.component(.minute, from: date)
             destination.eventTitle = event.eventTitle
-            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "ru")) \(year)"
-            destination.eventTime = "\(hour):\(minute)"
+            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "pl")) \(year)"
+            let time: String = (event.eventTimeEnd.elementsEqual("0")) ? "\(event.eventTimeStart)" : "\(event.eventTimeStart) - \(event.eventTimeEnd)"
+            destination.eventTime = "\(time)"
             destination.eventCity = event.eventCity
             destination.eventStreet = event.eventStreet
             destination.eventImageURL = event.eventImage
@@ -130,12 +110,5 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         }
     }
     
-    func stringToDateFormat(term: String) -> Date {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        dateFormatter.timeZone = TimeZone(identifier:"GMT")
-        let date = dateFormatter.date(from: term)!
-        return date
-    }
     
 }

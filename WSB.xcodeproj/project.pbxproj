@@ -27,7 +27,7 @@
 		188A8DEC2081238F004A31B6 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A8DEB2081238F004A31B6 /* EventDetailController.swift */; };
 		188A8DEE2081F46D004A31B6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A8DED2081F46D004A31B6 /* NavigationController.swift */; };
 		189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */; };
-		18A7ECFB20836C9B006E9EEC /* Artwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7ECFA20836C9B006E9EEC /* Artwork.swift */; };
+		18A7ECFB20836C9B006E9EEC /* PlaceMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A7ECFA20836C9B006E9EEC /* PlaceMarker.swift */; };
 		18C5657E20780A1900A97C27 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C5657D20780A1900A97C27 /* Constants.swift */; };
 		18ED44A0208BAC29009EFDF5 /* Kalam-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18ED449F208BAC29009EFDF5 /* Kalam-Bold.ttf */; };
 		18F3850D2087D2C900B9B8C6 /* ContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F3850C2087D2C900B9B8C6 /* ContainerController.swift */; };
@@ -61,7 +61,7 @@
 		188A8DEB2081238F004A31B6 /* EventDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
 		188A8DED2081F46D004A31B6 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		18A7ECFA20836C9B006E9EEC /* Artwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artwork.swift; sourceTree = "<group>"; };
+		18A7ECFA20836C9B006E9EEC /* PlaceMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMarker.swift; sourceTree = "<group>"; };
 		18C5657D20780A1900A97C27 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		18ED449F208BAC29009EFDF5 /* Kalam-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Bold.ttf"; sourceTree = "<group>"; };
 		18F3850C2087D2C900B9B8C6 /* ContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerController.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			children = (
 				180D7417207B4C2E0033C139 /* Config */,
 				182060462076AE15006834FD /* Events */,
-				18A7ECFA20836C9B006E9EEC /* Artwork.swift */,
+				18A7ECFA20836C9B006E9EEC /* PlaceMarker.swift */,
 				18F3850E208B80F800B9B8C6 /* MonthConverter.swift */,
 			);
 			path = Models;
@@ -143,10 +143,9 @@
 		180B8448206DB39800C44334 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1842DE22208D325A000200EE /* Extensions */,
 				180B8430206DA85E00C44334 /* Main.storyboard */,
 				180B8435206DA85E00C44334 /* LaunchScreen.storyboard */,
-				189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */,
-				183AD86C2072887C002AA213 /* ButtonExtension.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,10 +170,21 @@
 		182060462076AE15006834FD /* Events */ = {
 			isa = PBXGroup;
 			children = (
-				182060422075EB8E006834FD /* CustomTableViewCell.swift */,
 				182060442076A64C006834FD /* Event.swift */,
+				1842DE1E208D2770000200EE /* EventDataParser.swift */,
+				1842DE20208D2A8C000200EE /* EventFirebaseProperties.swift */,
+				182060422075EB8E006834FD /* CustomTableViewCell.swift */,
 			);
 			path = Events;
+			sourceTree = "<group>";
+		};
+		1842DE22208D325A000200EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				183AD86C2072887C002AA213 /* ButtonExtension.swift */,
+				189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		18F38510208B8DDD00B9B8C6 /* Home */ = {
@@ -208,8 +218,6 @@
 			children = (
 				180B8442206DB2BC00C44334 /* EventsController.swift */,
 				188A8DEB2081238F004A31B6 /* EventDetailController.swift */,
-				1842DE1E208D2770000200EE /* EventDataParser.swift */,
-				1842DE20208D2A8C000200EE /* EventFirebaseProperties.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -413,7 +421,7 @@
 				182060452076A64C006834FD /* Event.swift in Sources */,
 				180B842D206DA85E00C44334 /* HomeController.swift in Sources */,
 				189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */,
-				18A7ECFB20836C9B006E9EEC /* Artwork.swift in Sources */,
+				18A7ECFB20836C9B006E9EEC /* PlaceMarker.swift in Sources */,
 				18F3850D2087D2C900B9B8C6 /* ContainerController.swift in Sources */,
 				183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */,
 				180B8443206DB2BC00C44334 /* EventsController.swift in Sources */,

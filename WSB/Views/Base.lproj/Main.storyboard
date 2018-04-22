@@ -381,6 +381,8 @@
                         <outlet property="alertArrow" destination="jFP-RL-EwO" id="zTh-HC-GHU"/>
                         <outlet property="alertButton" destination="m30-Gu-Ss0" id="v3Z-Hi-M7f"/>
                         <outlet property="alertView" destination="jTv-om-CIG" id="BYY-Q0-KIl"/>
+                        <outlet property="eventDescription" destination="ahu-GM-dZG" id="CWO-hg-qRX"/>
+                        <outlet property="eventTitle" destination="rqO-EV-Wxr" id="aUN-kk-pa3"/>
                         <outlet property="eventView" destination="Ggf-EP-aOg" id="Pxv-n8-D19"/>
                         <outlet property="expandableView" destination="9fp-xV-6Wo" id="xYO-ic-sfJ"/>
                         <outlet property="expandableViewConstraint" destination="koY-Yg-as1" id="y9c-jT-Ht6"/>
@@ -665,6 +667,10 @@
                     <connections>
                         <outletCollection property="buttons" destination="RYe-Vg-WsJ" collectionClass="NSMutableArray" id="1CD-6M-IJX"/>
                         <outletCollection property="views" destination="a85-Bk-7dh" collectionClass="NSMutableArray" id="8dW-Ug-Mdk"/>
+                        <outletCollection property="views" destination="QKo-EA-Eu9" collectionClass="NSMutableArray" id="Mc8-lR-lD9"/>
+                        <outletCollection property="views" destination="EBo-fJ-HLo" collectionClass="NSMutableArray" id="MZF-0T-lcL"/>
+                        <outletCollection property="views" destination="YhT-MG-jQd" collectionClass="NSMutableArray" id="uQi-Lz-RrU"/>
+                        <outletCollection property="views" destination="atm-Gw-zIv" collectionClass="NSMutableArray" id="uCJ-Qg-qlN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>

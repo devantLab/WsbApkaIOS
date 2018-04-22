@@ -57,7 +57,7 @@ class EventDetailController: UIViewController {
     private func loadMap() {
         let initialLocation: CLLocation = CLLocation(latitude: coordinates["latitude"]!, longitude: coordinates["longitude"]!)
         centerMapOnLocation(location: initialLocation)
-        let artwork = Artwork(title: eventTitle ?? "",
+        let artwork = PlaceMarker(title: eventTitle ?? "",
                               locationName: "\(String(describing: eventCity)), \(String(describing: eventStreet))",
             coordinate: CLLocationCoordinate2D(latitude: initialLocation.coordinate.latitude, longitude: initialLocation.coordinate.longitude))
         mapView.addAnnotation(artwork)

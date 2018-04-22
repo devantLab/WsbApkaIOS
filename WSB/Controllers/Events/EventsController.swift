@@ -97,11 +97,10 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
             let year = calendar.component(.year, from: date)
             let month = calendar.component(.month, from: date)
             let day = calendar.component(.day, from: date)
-            let hour = calendar.component(.hour, from: date)
-            let minute = calendar.component(.minute, from: date)
             destination.eventTitle = event.eventTitle
             destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "pl")) \(year)"
-            destination.eventTime = "\(hour):\(minute)"
+            let time: String = (event.eventTimeEnd.elementsEqual("0")) ? "\(event.eventTimeStart)" : "\(event.eventTimeStart) - \(event.eventTimeEnd)"
+            destination.eventTime = "\(time)"
             destination.eventCity = event.eventCity
             destination.eventStreet = event.eventStreet
             destination.eventImageURL = event.eventImage

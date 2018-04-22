@@ -24,16 +24,19 @@ class HomeController: UIViewController {
     @IBOutlet weak var weatherDescription: UILabel!
     @IBOutlet weak var weatherTemperature: UILabel!
     
+    @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var eventDescription: UILabel!
     @IBOutlet weak var expandableViewConstraint: NSLayoutConstraint!
     
     let client = DarkSkyClient(apiKey: Constants.FORECAST_API_KEY)
-    let activityView = UIActivityIndicatorView()
     var weatherDescriptionText = "Wystąpił błąd podczas aktualizacji pogody"
     var weatherTemperatureText = ":("
+    private let rootRef = Database.database().reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingForecast()
         view.layoutIfNeeded()
+        getEvent()
         //button cornerRadius
         alertView.round(corners: .allCorners, radius: 10)
         expandableView.round(corners: [.bottomLeft, .bottomRight], radius: 10)
@@ -98,24 +101,31 @@ class HomeController: UIViewController {
                     self.weatherDescription.text = currentForecast.currently?.summary
                     let temperature: Int = Int((currentForecast.currently?.temperature)!)
                     self.weatherTemperature.text = String(temperature) + "°"
-                    self.activityView.stopAnimating()
                 }
                 
             case .failure(_):
                 DispatchQueue.main.async {
                     self.weatherDescription.text = self.weatherDescriptionText
                     self.weatherTemperature.text = self.weatherTemperatureText
-                    self.activityView.stopAnimating()
+                    
                 }
             }
         }
     }
-    func loadingForecast() {
-        activityView.center = weatherView.center
-        activityView.hidesWhenStopped = true
-        activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
-        activityView.startAnimating()
+    func getEvent() {
+        let eventsRef = rootRef.child("Events").queryLimited(toFirst: 1)
+        eventsRef.observe(DataEventType.childAdded, with: {(snapshot) in
+            if let dict = snapshot.value as? [String: Any] {
+                let event: Event = EventDataParser.parse(dict: dict)
+                DispatchQueue.main.async {
+                    self.eventTitle.text = event.eventTitle
+                    self.eventDescription.text = event.eventDescription
+                    
+                }
+            }
+        })
     }
+   
     @IBAction func openSideMenu(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
     }

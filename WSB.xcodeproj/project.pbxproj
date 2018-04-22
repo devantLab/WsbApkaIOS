@@ -22,6 +22,8 @@
 		183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AD86C2072887C002AA213 /* ButtonExtension.swift */; };
 		1842DE1B208D08B3000200EE /* RecommendedAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842DE1A208D08B3000200EE /* RecommendedAppController.swift */; };
 		1842DE1D208D08CF000200EE /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842DE1C208D08CF000200EE /* AppTableViewCell.swift */; };
+		1842DE1F208D2770000200EE /* EventDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842DE1E208D2770000200EE /* EventDataParser.swift */; };
+		1842DE21208D2A8C000200EE /* EventFirebaseProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842DE20208D2A8C000200EE /* EventFirebaseProperties.swift */; };
 		188A8DEC2081238F004A31B6 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A8DEB2081238F004A31B6 /* EventDetailController.swift */; };
 		188A8DEE2081F46D004A31B6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A8DED2081F46D004A31B6 /* NavigationController.swift */; };
 		189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */; };
@@ -54,6 +56,8 @@
 		183AD86C2072887C002AA213 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		1842DE1A208D08B3000200EE /* RecommendedAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedAppController.swift; sourceTree = "<group>"; };
 		1842DE1C208D08CF000200EE /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
+		1842DE1E208D2770000200EE /* EventDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataParser.swift; sourceTree = "<group>"; };
+		1842DE20208D2A8C000200EE /* EventFirebaseProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFirebaseProperties.swift; sourceTree = "<group>"; };
 		188A8DEB2081238F004A31B6 /* EventDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
 		188A8DED2081F46D004A31B6 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 			children = (
 				180B8442206DB2BC00C44334 /* EventsController.swift */,
 				188A8DEB2081238F004A31B6 /* EventDetailController.swift */,
+				1842DE1E208D2770000200EE /* EventDataParser.swift */,
+				1842DE20208D2A8C000200EE /* EventFirebaseProperties.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -394,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1842DE21208D2A8C000200EE /* EventFirebaseProperties.swift in Sources */,
 				1842DE1B208D08B3000200EE /* RecommendedAppController.swift in Sources */,
 				182060432075EB8E006834FD /* CustomTableViewCell.swift in Sources */,
 				180B843F206DAAC900C44334 /* MainController.swift in Sources */,
@@ -412,6 +419,7 @@
 				180B8443206DB2BC00C44334 /* EventsController.swift in Sources */,
 				180B8445206DB32000C44334 /* InfosController.swift in Sources */,
 				18C5657E20780A1900A97C27 /* Constants.swift in Sources */,
+				1842DE1F208D2770000200EE /* EventDataParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

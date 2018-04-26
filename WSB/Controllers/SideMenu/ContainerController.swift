@@ -21,7 +21,7 @@ class ContainerController: UIViewController {
     @objc func toggleSideMenu(){
         if sideMenuOpen {
             sideMenuOpen = false
-            sideMenuConstraint.constant = -300
+            sideMenuConstraint.constant = -280
         } else {
             sideMenuOpen = true
             sideMenuConstraint.constant = 0
@@ -37,7 +37,7 @@ class ContainerController: UIViewController {
         }
         if sender.direction == .left {
             sideMenuOpen = false
-            sideMenuConstraint.constant = -300
+            sideMenuConstraint.constant = -280
         }
     }
 }

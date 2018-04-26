@@ -38,7 +38,15 @@ class EventDataParser: EventFirebaseProperties {
         let date = dateFormatter.date(from: term)!
         return date
     }
-    
+    // TODO: increment Clicks method 
+    static func incrementClicks(clicks: String) -> String {
+        if var intClicks: Int = Int(clicks) {
+            intClicks += 1
+            let stringClicks = String(intClicks)
+            return stringClicks
+        }
+        return clicks
+    }
     
     
 }

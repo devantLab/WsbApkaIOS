@@ -10,8 +10,10 @@ import UIKit
 import GoogleMaps
 import MapKit
 import SDWebImage
+import Firebase
 
 class EventDetailController: UIViewController {
+    var eventId: Int?
     var eventTitle: String?
     var eventDescription: String?
     var eventDate: String?
@@ -37,7 +39,6 @@ class EventDetailController: UIViewController {
         setContent()
         loadImage()
         loadMap()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,4 +70,5 @@ class EventDetailController: UIViewController {
                                                                   regionRadius, regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+    
 }

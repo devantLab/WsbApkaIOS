@@ -21,7 +21,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
     // MARK: PULL TO REFRESH
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = tabBarController?.tabBar.barTintColor
+        refreshControl.tintColor = UIColor(red: 0.00, green: 0.32, blue: 0.91, alpha: 1.0)
         refreshControl.addTarget(self, action: #selector(loadEvents), for: .valueChanged)
         return refreshControl
     }()

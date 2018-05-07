@@ -37,6 +37,8 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layoutIfNeeded()
+        //disabling the button until the data is properly loaded
+        buttons[1].isEnabled = false
         getEvent()
         
         //button cornerRadius
@@ -124,7 +126,7 @@ class HomeController: UIViewController {
                     self.eventTitle.text = event.eventTitle
                     self.eventDescription.text = event.eventDescription
                     // buttons[2] -> Event Button
-                    self.buttons[2].isEnabled = true
+                    self.buttons[1].isEnabled = true
                 }
             }
         })

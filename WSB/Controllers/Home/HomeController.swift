@@ -37,6 +37,8 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layoutIfNeeded()
+        //disabling the button until the data is properly loaded
+        buttons[1].isEnabled = false
         getEvent()
         
         //button cornerRadius
@@ -124,7 +126,7 @@ class HomeController: UIViewController {
                     self.eventTitle.text = event.eventTitle
                     self.eventDescription.text = event.eventDescription
                     // buttons[2] -> Event Button
-                    self.buttons[2].isEnabled = true
+                    self.buttons[1].isEnabled = true
                 }
             }
         })
@@ -137,6 +139,7 @@ class HomeController: UIViewController {
             let year = calendar.component(.year, from: date!)
             let month = calendar.component(.month, from: date!)
             let day = calendar.component(.day, from: date!)
+            destination.eventId = event?.eventId
             destination.eventTitle = event?.eventTitle
             destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "pl")) \(year)"
             let time: String = (event!.eventTimeEnd.elementsEqual("0")) ? "\(event!.eventTimeStart)" : "\(event!.eventTimeStart) - \(event!.eventTimeEnd)"

@@ -21,7 +21,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
     // MARK: PULL TO REFRESH
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
-        refreshControl.tintColor = tabBarController?.tabBar.barTintColor
+        refreshControl.tintColor = UIColor(red: 0.00, green: 0.32, blue: 0.91, alpha: 1.0)
         refreshControl.addTarget(self, action: #selector(loadEvents), for: .valueChanged)
         return refreshControl
     }()
@@ -97,6 +97,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
             let year = calendar.component(.year, from: date)
             let month = calendar.component(.month, from: date)
             let day = calendar.component(.day, from: date)
+            destination.eventId = event.eventId
             destination.eventTitle = event.eventTitle
             destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "pl")) \(year)"
             let time: String = (event.eventTimeEnd.elementsEqual("0")) ? "\(event.eventTimeStart)" : "\(event.eventTimeStart) - \(event.eventTimeEnd)"

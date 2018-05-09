@@ -27,6 +27,7 @@ class EventDetailController: UIViewController {
     @IBOutlet weak private var mapView: MKMapView!
     @IBOutlet weak private var titleLabel: UILabel!
     @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak private var timeLabel: UILabel!
     @IBOutlet weak private var cityLabel: UILabel!
     @IBOutlet weak private var streetLabel: UILabel!
@@ -54,6 +55,9 @@ class EventDetailController: UIViewController {
         timeLabel.text = eventTime
         cityLabel.text = eventCity
         streetLabel.text = eventStreet
+        descriptionTextView.translatesAutoresizingMaskIntoConstraints = true
+        descriptionTextView.sizeToFit()
+        descriptionTextView.isScrollEnabled = false
     }
     private func loadMap() {
         let initialLocation: CLLocation = CLLocation(latitude: coordinates["latitude"]!, longitude: coordinates["longitude"]!)

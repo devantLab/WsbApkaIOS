@@ -1368,7 +1368,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NGL-NO-Ccd">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800.33333333333337"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image2" translatesAutoresizingMaskIntoConstraints="NO" id="qFu-vo-sBa">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
@@ -1383,14 +1383,17 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2oI-HB-RTu">
-                                                <rect key="frame" x="8" y="458.33333333333343" width="359" height="116.66666666666669"/>
+                                                <rect key="frame" x="8" y="458.33333333333337" width="359" height="117"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="117" id="Ski-Lf-oA4"/>
+                                                </constraints>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k16-tx-w1q">
-                                                <rect key="frame" x="0.0" y="583" width="375" height="209"/>
+                                                <rect key="frame" x="0.0" y="583.33333333333337" width="375" height="209"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="209" id="bfq-jr-2as"/>
                                                 </constraints>
@@ -1450,7 +1453,6 @@
                                             <constraint firstItem="qFu-vo-sBa" firstAttribute="leading" secondItem="NGL-NO-Ccd" secondAttribute="leading" id="AD7-vF-FbH"/>
                                             <constraint firstItem="qFu-vo-sBa" firstAttribute="top" secondItem="NGL-NO-Ccd" secondAttribute="top" id="AxY-tX-cCF"/>
                                             <constraint firstAttribute="trailing" secondItem="AWF-wf-ETB" secondAttribute="trailing" constant="8" id="BQm-xS-9E7"/>
-                                            <constraint firstAttribute="height" constant="800" id="BZK-rB-LZL"/>
                                             <constraint firstItem="k16-tx-w1q" firstAttribute="trailing" secondItem="qFu-vo-sBa" secondAttribute="trailing" id="Ba8-kD-eV5"/>
                                             <constraint firstItem="gd7-6I-Fm8" firstAttribute="leading" secondItem="NGL-NO-Ccd" secondAttribute="leading" constant="8" id="Cdq-oR-Voa"/>
                                             <constraint firstAttribute="trailing" secondItem="qFu-vo-sBa" secondAttribute="trailing" id="Dqr-ij-Xzb"/>
@@ -1458,14 +1460,12 @@
                                             <constraint firstItem="tsZ-Sg-Pla" firstAttribute="leading" secondItem="gd7-6I-Fm8" secondAttribute="trailing" constant="8" id="Gqo-Th-5Af"/>
                                             <constraint firstItem="k16-tx-w1q" firstAttribute="leading" secondItem="NGL-NO-Ccd" secondAttribute="leading" id="HgP-8g-jJo"/>
                                             <constraint firstItem="EUp-lM-cpv" firstAttribute="leading" secondItem="NGL-NO-Ccd" secondAttribute="leading" constant="8" id="KbR-ol-fSO"/>
-                                            <constraint firstItem="k16-tx-w1q" firstAttribute="top" secondItem="2oI-HB-RTu" secondAttribute="bottom" constant="8" id="LeR-fG-owx"/>
                                             <constraint firstAttribute="trailing" secondItem="EUp-lM-cpv" secondAttribute="trailing" constant="8" id="OPE-SH-egM"/>
                                             <constraint firstItem="gd7-6I-Fm8" firstAttribute="leading" secondItem="NGL-NO-Ccd" secondAttribute="leading" constant="8" id="Ofq-gz-nJs"/>
                                             <constraint firstItem="tsZ-Sg-Pla" firstAttribute="top" secondItem="EUp-lM-cpv" secondAttribute="bottom" constant="16.670000000000002" id="Ph5-GU-dcL"/>
-                                            <constraint firstAttribute="bottom" secondItem="k16-tx-w1q" secondAttribute="bottom" constant="8" id="QTT-dT-9d9"/>
                                             <constraint firstAttribute="trailing" secondItem="2oI-HB-RTu" secondAttribute="trailing" constant="8" id="RgK-ou-HYd"/>
+                                            <constraint firstItem="k16-tx-w1q" firstAttribute="top" secondItem="2oI-HB-RTu" secondAttribute="bottom" constant="8" id="Sim-hq-zC8"/>
                                             <constraint firstItem="gd7-6I-Fm8" firstAttribute="top" secondItem="EUp-lM-cpv" secondAttribute="bottom" constant="16.670000000000002" id="Uxz-oF-G0a"/>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="800" id="Wls-2Q-HVR"/>
                                             <constraint firstItem="AWF-wf-ETB" firstAttribute="leading" secondItem="glF-Lp-Oec" secondAttribute="trailing" constant="8" id="X7o-ct-F9u"/>
                                             <constraint firstItem="C1X-7g-KxG" firstAttribute="leading" secondItem="glF-Lp-Oec" secondAttribute="trailing" constant="8" id="YSd-Tk-85S"/>
                                             <constraint firstItem="2oI-HB-RTu" firstAttribute="top" secondItem="GY6-Rb-1rh" secondAttribute="bottom" constant="8" id="ZqY-ia-L96"/>
@@ -1479,9 +1479,7 @@
                                             <constraint firstItem="k16-tx-w1q" firstAttribute="bottom" secondItem="NGL-NO-Ccd" secondAttribute="bottomMargin" id="jpx-IJ-QaF"/>
                                             <constraint firstItem="6rU-vy-otd" firstAttribute="leading" secondItem="gd7-6I-Fm8" secondAttribute="trailing" constant="8" id="jrf-XX-K3Y"/>
                                             <constraint firstItem="6rU-vy-otd" firstAttribute="top" secondItem="tsZ-Sg-Pla" secondAttribute="bottom" id="lyf-lq-ub4"/>
-                                            <constraint firstItem="k16-tx-w1q" firstAttribute="top" secondItem="2oI-HB-RTu" secondAttribute="bottom" constant="8" id="q8j-9Z-KpO"/>
                                             <constraint firstItem="AWF-wf-ETB" firstAttribute="top" secondItem="6rU-vy-otd" secondAttribute="bottom" constant="17" id="unz-X9-wUX"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="800" id="uou-sw-lAT"/>
                                             <constraint firstItem="C1X-7g-KxG" firstAttribute="top" secondItem="AWF-wf-ETB" secondAttribute="bottom" id="xil-QZ-st6"/>
                                         </constraints>
                                     </view>
@@ -1507,6 +1505,7 @@
                     <connections>
                         <outlet property="cityLabel" destination="AWF-wf-ETB" id="LaP-zl-wY8"/>
                         <outlet property="dateLabel" destination="tsZ-Sg-Pla" id="xAf-2u-u8O"/>
+                        <outlet property="descriptionTextView" destination="2oI-HB-RTu" id="q6p-jB-TIf"/>
                         <outlet property="imageView" destination="qFu-vo-sBa" id="Tyq-gr-hgM"/>
                         <outlet property="mapView" destination="k16-tx-w1q" id="srQ-ct-TeW"/>
                         <outlet property="streetLabel" destination="C1X-7g-KxG" id="Qoq-2V-0z7"/>

@@ -12,4 +12,6 @@ target 'WSB' do
     pod 'Firebase/Database'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
+    pod 'PDFReader'
+    pod 'SVProgressHUD'
 end

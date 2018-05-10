@@ -55,6 +55,8 @@ class EventDetailController: UIViewController {
         timeLabel.text = eventTime
         cityLabel.text = eventCity
         streetLabel.text = eventStreet
+        descriptionTextView.text = eventDescription
+        //description text resizing to content
         descriptionTextView.translatesAutoresizingMaskIntoConstraints = true
         descriptionTextView.sizeToFit()
         descriptionTextView.isScrollEnabled = false

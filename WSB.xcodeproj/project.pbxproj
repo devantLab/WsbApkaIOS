@@ -18,12 +18,14 @@
 		180B8445206DB32000C44334 /* InfosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B8444206DB32000C44334 /* InfosController.swift */; };
 		182060432075EB8E006834FD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060422075EB8E006834FD /* CustomTableViewCell.swift */; };
 		182060452076A64C006834FD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060442076A64C006834FD /* Event.swift */; };
+		182BF80820C95B130091CA4C /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BF80720C95B130091CA4C /* LanguageManager.swift */; };
 		183637E0207DF9DD00551501 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183637DF207DF9DD00551501 /* GoogleService-Info.plist */; };
 		183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AD86C2072887C002AA213 /* ButtonExtension.swift */; };
 		1842DE1B208D08B3000200EE /* RecommendedAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842DE1A208D08B3000200EE /* RecommendedAppController.swift */; };
 		1842DE1D208D08CF000200EE /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842DE1C208D08CF000200EE /* AppTableViewCell.swift */; };
 		1842DE1F208D2770000200EE /* EventDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842DE1E208D2770000200EE /* EventDataParser.swift */; };
 		1842DE21208D2A8C000200EE /* EventFirebaseProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842DE20208D2A8C000200EE /* EventFirebaseProperties.swift */; };
+		185E0F6E20A4DBD5006843CD /* test.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 185E0F6D20A4DBD5006843CD /* test.pdf */; };
 		188A8DEC2081238F004A31B6 /* EventDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A8DEB2081238F004A31B6 /* EventDetailController.swift */; };
 		188A8DEE2081F46D004A31B6 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188A8DED2081F46D004A31B6 /* NavigationController.swift */; };
 		189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */; };
@@ -52,6 +54,7 @@
 		182060422075EB8E006834FD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		182060442076A64C006834FD /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		182060492076B2AA006834FD /* WSB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WSB.entitlements; sourceTree = "<group>"; };
+		182BF80720C95B130091CA4C /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		183637DF207DF9DD00551501 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		183AD86C2072887C002AA213 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		1842DE1A208D08B3000200EE /* RecommendedAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedAppController.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 		1842DE1E208D2770000200EE /* EventDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDataParser.swift; sourceTree = "<group>"; };
 		1842DE20208D2A8C000200EE /* EventFirebaseProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventFirebaseProperties.swift; sourceTree = "<group>"; };
 		185E0F6A20A4CC3D006843CD /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		185E0F6D20A4DBD5006843CD /* test.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = test.pdf; sourceTree = "<group>"; };
 		188A8DEB2081238F004A31B6 /* EventDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailController.swift; sourceTree = "<group>"; };
 		188A8DED2081F46D004A31B6 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		189FEF2020703B5C00FE6F77 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				180B8438206DA85E00C44334 /* Info.plist */,
 				183637DF207DF9DD00551501 /* GoogleService-Info.plist */,
 				185E0F6A20A4CC3D006843CD /* Bridging-Header.h */,
+				182BF80720C95B130091CA4C /* LanguageManager.swift */,
 			);
 			path = WSB;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 		180B8448206DB39800C44334 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				185E0F6D20A4DBD5006843CD /* test.pdf */,
 				1842DE22208D325A000200EE /* Extensions */,
 				180B8430206DA85E00C44334 /* Main.storyboard */,
 				180B8435206DA85E00C44334 /* LaunchScreen.storyboard */,
@@ -327,6 +333,7 @@
 				180B8437206DA85E00C44334 /* LaunchScreen.storyboard in Resources */,
 				183637E0207DF9DD00551501 /* GoogleService-Info.plist in Resources */,
 				180B8434206DA85E00C44334 /* Assets.xcassets in Resources */,
+				185E0F6E20A4DBD5006843CD /* test.pdf in Resources */,
 				18ED44A0208BAC29009EFDF5 /* Kalam-Bold.ttf in Resources */,
 				180B8432206DA85E00C44334 /* Main.storyboard in Resources */,
 			);
@@ -346,9 +353,12 @@
 				"${BUILT_PRODUCTS_DIR}/ForecastIO/ForecastIO.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Jsonify/Jsonify.framework",
+				"${BUILT_PRODUCTS_DIR}/LocalizationKit/LocalizationKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PDFReader/PDFReader.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -358,9 +368,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ForecastIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Jsonify.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LocalizationKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PDFReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -429,6 +442,7 @@
 				189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */,
 				18A7ECFB20836C9B006E9EEC /* PlaceMarker.swift in Sources */,
 				18F3850D2087D2C900B9B8C6 /* ContainerController.swift in Sources */,
+				182BF80820C95B130091CA4C /* LanguageManager.swift in Sources */,
 				183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */,
 				180B8443206DB2BC00C44334 /* EventsController.swift in Sources */,
 				180B8445206DB32000C44334 /* InfosController.swift in Sources */,
@@ -577,7 +591,7 @@
 				DEVELOPMENT_TEAM = 3FR463T9MB;
 				INFOPLIST_FILE = WSB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pl.devant.WSB;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.devant.wsbnotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WSB/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
@@ -595,7 +609,7 @@
 				DEVELOPMENT_TEAM = 3FR463T9MB;
 				INFOPLIST_FILE = WSB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = pl.devant.WSB;
+				PRODUCT_BUNDLE_IDENTIFIER = pl.devant.wsbnotify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "WSB/Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

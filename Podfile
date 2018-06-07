@@ -14,4 +14,5 @@ target 'WSB' do
     pod 'GooglePlaces'
     pod 'PDFReader'
     pod 'SVProgressHUD'
+    pod 'LocalizationKit', '~>4.0.3'
 end

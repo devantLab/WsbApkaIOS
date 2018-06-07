@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UniversityController: UIViewController {
+class UniversityController: UIViewController, LanguageManager {
     @IBOutlet var views: [UIView]!
     @IBOutlet var buttons: [UIButton]!
     override func viewDidLoad() {
@@ -24,6 +24,10 @@ class UniversityController: UIViewController {
     }
     @IBAction func buttonClick(_ sender: UIButton) {
         sender.flash()
+        
+    }
+    //LanguageManager Protocol setLanguage() method implementation
+    func setLanguage(){
         
     }
 

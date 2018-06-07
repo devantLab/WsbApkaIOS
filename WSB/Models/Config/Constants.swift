@@ -13,4 +13,7 @@ struct Constants {
     
     // MARK: ForecastIO
     static let FORECAST_API_KEY = "4f71aa59dfaa7e14d3084e9fd27f0240"
+    
+    // MARK: LocalizationKit
+    static let LOCALIZATION_KIT_API_KEY = "9f580bcf-5656-4592-bbc3-f9956e36ab8a"
 }

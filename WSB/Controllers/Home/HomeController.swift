@@ -9,7 +9,9 @@
 import UIKit
 import ForecastIO
 import Firebase
-class HomeController: UIViewController {
+import LocalizationKit
+
+class HomeController: UIViewController, LanguageManager {
 
    
     @IBOutlet weak var expandableView: UIView!
@@ -29,18 +31,20 @@ class HomeController: UIViewController {
     @IBOutlet weak var expandableViewConstraint: NSLayoutConstraint!
     
     let client = DarkSkyClient(apiKey: Constants.FORECAST_API_KEY)
-    var weatherDescriptionText = "Wystąpił błąd podczas aktualizacji pogody"
+    var weatherDescriptionText = Localization.get("PogodaBlad", alternate: "Wystąpił błąd podczas aktualizacji pogody")
     var weatherTemperatureText = ":("
+    let loadingText = Localization.get("Ladowanie", alternate: "Loading");
     private let rootRef = Database.database().reference()
     var event: Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layoutIfNeeded()
+        setLanguage()
         //disabling the button until the data is properly loaded
         buttons[1].isEnabled = false
         getEvent()
-        
+        Localization.setLanguage(Language.russian.rawValue)
         //button cornerRadius
         alertView.round(corners: .allCorners, radius: 10)
         expandableView.round(corners: [.bottomLeft, .bottomRight], radius: 10)
@@ -93,7 +97,7 @@ class HomeController: UIViewController {
             
         })
     }
-    func getForecast() {
+    private func getForecast() {
         client.units = .si
         client.language = .polish
         let lat = 54.372158
@@ -116,7 +120,7 @@ class HomeController: UIViewController {
             }
         }
     }
-    func getEvent() {
+    private func getEvent() {
         let eventsRef = rootRef.child("Events").queryLimited(toFirst: 1)
         eventsRef.observe(DataEventType.childAdded, with: {(snapshot) in
             if let dict = snapshot.value as? [String: Any] {
@@ -156,6 +160,10 @@ class HomeController: UIViewController {
     @IBAction func openSideMenu(_ sender: Any) {
         NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
     }
-    
+    //LanguageManager Protocol setLanguage() method implementation
+    func setLanguage(){
+        weatherDescription.text = loadingText
+        eventDescription.text = loadingText
+    }
 }
 

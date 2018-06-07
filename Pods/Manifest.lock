@@ -35,6 +35,11 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - Jsonify (2.1.0)
   - leveldb-library (1.20)
+  - LocalizationKit (4.0.4):
+    - LocalizationKit/Core (= 4.0.4)
+    - Socket.IO-Client-Swift (~> 13.1.0)
+  - LocalizationKit/Core (4.0.4):
+    - Socket.IO-Client-Swift (~> 13.1.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -44,6 +49,9 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+  - Socket.IO-Client-Swift (13.1.3):
+    - Starscream (~> 3.0.2)
+  - Starscream (3.0.4)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
@@ -53,6 +61,7 @@ DEPENDENCIES:
   - ForecastIO
   - GoogleMaps
   - GooglePlaces
+  - LocalizationKit (~> 4.0.3)
   - PDFReader
   - SDWebImage (~> 4.0)
   - SVProgressHUD
@@ -70,11 +79,14 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   Jsonify: 43c28e11077031c829575ef47c1461208a2fc420
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  LocalizationKit: 18134b48e43781da8d588c796da946e153e8b407
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   PDFReader: 2c4a845d0560f33221cf911516e3b700967680f6
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  Socket.IO-Client-Swift: d30d6fd08a38ad2a182b090936a043bf512ab2de
+  Starscream: f5da93fe6984c77b694366bf7299b7dc63a76f26
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 3198fc5a33d414bf1ff8106abc1192dff15181cf
+PODFILE CHECKSUM: cc0610a7f476e99ab0e43f55ab0a65e356d77f94
 
 COCOAPODS: 1.4.0

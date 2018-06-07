@@ -163,7 +163,7 @@
                                                                     <constraint firstAttribute="height" constant="50" id="Ruw-JE-BoT"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Loading..." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-Sh-9Tk">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r0n-Sh-9Tk">
                                                                 <rect key="frame" x="66" y="47.666666666666686" width="276.66666666666669" height="62.333333333333343"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -221,7 +221,7 @@
                                                                     <constraint firstAttribute="width" constant="40" id="oyP-kj-Eeb"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Loading..." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahu-GM-dZG">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahu-GM-dZG">
                                                                 <rect key="frame" x="66" y="22" width="237" height="88"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -365,7 +365,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="WSB Notify" id="gpQ-nF-o1Y">
                         <barButtonItem key="backBarButtonItem" title=" " id="0lA-4c-wGJ"/>
-                        <barButtonItem key="leftBarButtonItem" title="Menu" style="done" id="Who-xr-QF6">
+                        <barButtonItem key="leftBarButtonItem" image="menu" style="done" id="Who-xr-QF6">
                             <connections>
                                 <action selector="openSideMenu:" destination="9pv-A4-QxB" id="SDg-ND-bak"/>
                             </connections>
@@ -611,6 +611,7 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.0" green="0.12549019610000001" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="width" constant="359" id="2Rc-BI-6ZH"/>
                                                             <constraint firstItem="zN4-wr-amh" firstAttribute="top" secondItem="atm-Gw-zIv" secondAttribute="top" constant="16" id="Da7-3h-Dkz"/>
                                                             <constraint firstAttribute="bottom" secondItem="iJf-19-6vb" secondAttribute="bottom" id="E3B-tV-sf8"/>
                                                             <constraint firstItem="iJf-19-6vb" firstAttribute="top" secondItem="atm-Gw-zIv" secondAttribute="top" id="P02-aC-9wV"/>
@@ -623,11 +624,13 @@
                                                     </view>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="YhT-MG-jQd" secondAttribute="trailing" id="3ki-A5-EPg"/>
                                                     <constraint firstItem="EBo-fJ-HLo" firstAttribute="top" secondItem="Nlg-c7-3cn" secondAttribute="top" constant="156" id="7bh-gX-GR4"/>
                                                     <constraint firstAttribute="height" constant="374" id="CLl-2D-yB9"/>
                                                     <constraint firstItem="EBo-fJ-HLo" firstAttribute="centerY" secondItem="Nlg-c7-3cn" secondAttribute="centerY" id="Ebs-B2-Zqi"/>
                                                     <constraint firstItem="QKo-EA-Eu9" firstAttribute="top" secondItem="Nlg-c7-3cn" secondAttribute="top" constant="78" id="NqR-Du-usl"/>
                                                     <constraint firstItem="atm-Gw-zIv" firstAttribute="top" secondItem="Nlg-c7-3cn" secondAttribute="top" constant="312" id="Q9M-nt-9FQ"/>
+                                                    <constraint firstItem="YhT-MG-jQd" firstAttribute="leading" secondItem="Nlg-c7-3cn" secondAttribute="leading" id="lbh-BE-kK0"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -1657,6 +1660,7 @@
         <image name="image2" width="660" height="440"/>
         <image name="image6" width="600" height="600"/>
         <image name="infos" width="30" height="30"/>
+        <image name="menu" width="25" height="25"/>
         <image name="university" width="30" height="30"/>
         <image name="wsb_gdansk" width="878" height="458"/>
     </resources>

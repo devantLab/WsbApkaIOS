@@ -11,7 +11,7 @@ import ForecastIO
 import Firebase
 import LocalizationKit
 
-class HomeController: UIViewController, LanguageManager {
+class HomeController: UIViewController {
 
    
     @IBOutlet weak var expandableView: UIView!
@@ -44,7 +44,7 @@ class HomeController: UIViewController, LanguageManager {
         //disabling the button until the data is properly loaded
         buttons[1].isEnabled = false
         getEvent()
-        Localization.setLanguage(Language.russian.rawValue)
+        Localization.setLanguage("pl")
         //button cornerRadius
         alertView.round(corners: .allCorners, radius: 10)
         expandableView.round(corners: [.bottomLeft, .bottomRight], radius: 10)
@@ -98,8 +98,15 @@ class HomeController: UIViewController, LanguageManager {
         })
     }
     private func getForecast() {
+        let langKey : String = Localization.language!.key
         client.units = .si
-        client.language = .polish
+        if langKey.elementsEqual("ru") {
+            client.language = Language.russian
+        }else if langKey.elementsEqual("pl") {
+            client.language = Language.polish
+        } else{
+            client.language = Language.english
+        }
         let lat = 54.372158
         let lon = 18.638306
         client.getForecast(latitude: lat, longitude: lon) { result in
@@ -145,7 +152,7 @@ class HomeController: UIViewController, LanguageManager {
             let day = calendar.component(.day, from: date!)
             destination.eventId = event?.eventId
             destination.eventTitle = event?.eventTitle
-            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "pl")) \(year)"
+            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: Localization.languageCode!)) \(year)"
             let time: String = (event!.eventTimeEnd.elementsEqual("0")) ? "\(event!.eventTimeStart)" : "\(event!.eventTimeStart) - \(event!.eventTimeEnd)"
             destination.eventTime = "\(time)"
             destination.eventCity = event?.eventCity

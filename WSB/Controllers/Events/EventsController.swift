@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import Firebase
+import LocalizationKit
 
 class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -77,7 +78,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         let calendar = Calendar.current
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
-        cell.eventMonth.text = MonthConverter.monthName(month: month, language: "pl")
+        cell.eventMonth.text = MonthConverter.monthName(month: month, language: Localization.language!.key)
         cell.eventDay.text = String(day)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.eventImage.round(corners: .allCorners, radius: 10)

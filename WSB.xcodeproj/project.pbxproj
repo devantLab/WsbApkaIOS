@@ -18,7 +18,6 @@
 		180B8445206DB32000C44334 /* InfosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180B8444206DB32000C44334 /* InfosController.swift */; };
 		182060432075EB8E006834FD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060422075EB8E006834FD /* CustomTableViewCell.swift */; };
 		182060452076A64C006834FD /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182060442076A64C006834FD /* Event.swift */; };
-		182BF80820C95B130091CA4C /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BF80720C95B130091CA4C /* LanguageManager.swift */; };
 		183637E0207DF9DD00551501 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183637DF207DF9DD00551501 /* GoogleService-Info.plist */; };
 		183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AD86C2072887C002AA213 /* ButtonExtension.swift */; };
 		1842DE1B208D08B3000200EE /* RecommendedAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842DE1A208D08B3000200EE /* RecommendedAppController.swift */; };
@@ -54,7 +53,6 @@
 		182060422075EB8E006834FD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		182060442076A64C006834FD /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		182060492076B2AA006834FD /* WSB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WSB.entitlements; sourceTree = "<group>"; };
-		182BF80720C95B130091CA4C /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		183637DF207DF9DD00551501 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		183AD86C2072887C002AA213 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		1842DE1A208D08B3000200EE /* RecommendedAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedAppController.swift; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 				180B8438206DA85E00C44334 /* Info.plist */,
 				183637DF207DF9DD00551501 /* GoogleService-Info.plist */,
 				185E0F6A20A4CC3D006843CD /* Bridging-Header.h */,
-				182BF80720C95B130091CA4C /* LanguageManager.swift */,
 			);
 			path = WSB;
 			sourceTree = "<group>";
@@ -442,7 +439,6 @@
 				189FEF2120703B5C00FE6F77 /* UIViewExtension.swift in Sources */,
 				18A7ECFB20836C9B006E9EEC /* PlaceMarker.swift in Sources */,
 				18F3850D2087D2C900B9B8C6 /* ContainerController.swift in Sources */,
-				182BF80820C95B130091CA4C /* LanguageManager.swift in Sources */,
 				183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */,
 				180B8443206DB2BC00C44334 /* EventsController.swift in Sources */,
 				180B8445206DB32000C44334 /* InfosController.swift in Sources */,

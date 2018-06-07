@@ -8,6 +8,10 @@
 
 import Foundation
 
-protocol LanguageManager {
-    func setLanguage()
+class LanguageManager {
+    
+    func setLanguage(){
+        fatalError("Override this method")
+    }
 }
+

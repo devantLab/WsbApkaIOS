@@ -417,7 +417,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="62"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="22"/>
                                                                 <inset key="contentEdgeInsets" minX="62" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                                <state key="normal" title="Donieś dokumenty">
+                                                                <state key="normal">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
@@ -442,14 +442,14 @@
                                                         </subviews>
                                                         <color key="backgroundColor" red="1" green="0.14901960780000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstItem="T8J-01-zQK" firstAttribute="top" secondItem="a85-Bk-7dh" secondAttribute="top" id="4PM-QE-NZ8"/>
-                                                            <constraint firstItem="T8J-01-zQK" firstAttribute="leading" secondItem="a85-Bk-7dh" secondAttribute="leading" id="Ga9-fw-NcS"/>
+                                                            <constraint firstItem="T8J-01-zQK" firstAttribute="top" secondItem="a85-Bk-7dh" secondAttribute="top" id="2qo-fW-EpK"/>
                                                             <constraint firstItem="z98-Ay-oTR" firstAttribute="leading" secondItem="a85-Bk-7dh" secondAttribute="leading" constant="16" id="IM3-DU-GTu"/>
                                                             <constraint firstItem="gRb-QX-bS4" firstAttribute="top" secondItem="a85-Bk-7dh" secondAttribute="top" constant="16" id="L3U-bM-xLl"/>
+                                                            <constraint firstAttribute="bottom" secondItem="T8J-01-zQK" secondAttribute="bottom" id="YDP-0g-99J"/>
+                                                            <constraint firstAttribute="trailing" secondItem="T8J-01-zQK" secondAttribute="trailing" id="aMU-An-XV6"/>
                                                             <constraint firstAttribute="trailing" secondItem="gRb-QX-bS4" secondAttribute="trailing" constant="16" id="ejd-iq-5sN"/>
-                                                            <constraint firstAttribute="trailing" secondItem="T8J-01-zQK" secondAttribute="trailing" id="fc1-Vb-lU0"/>
-                                                            <constraint firstAttribute="bottom" secondItem="T8J-01-zQK" secondAttribute="bottom" id="o5d-as-Yrh"/>
                                                             <constraint firstItem="z98-Ay-oTR" firstAttribute="top" secondItem="a85-Bk-7dh" secondAttribute="top" constant="16" id="va3-TQ-s1e"/>
+                                                            <constraint firstItem="T8J-01-zQK" firstAttribute="leading" secondItem="a85-Bk-7dh" secondAttribute="leading" id="ypb-aI-XB8"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKo-EA-Eu9">
@@ -630,6 +630,7 @@
                                                     <constraint firstItem="EBo-fJ-HLo" firstAttribute="centerY" secondItem="Nlg-c7-3cn" secondAttribute="centerY" id="Ebs-B2-Zqi"/>
                                                     <constraint firstItem="QKo-EA-Eu9" firstAttribute="top" secondItem="Nlg-c7-3cn" secondAttribute="top" constant="78" id="NqR-Du-usl"/>
                                                     <constraint firstItem="atm-Gw-zIv" firstAttribute="top" secondItem="Nlg-c7-3cn" secondAttribute="top" constant="312" id="Q9M-nt-9FQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="a85-Bk-7dh" secondAttribute="trailing" id="TTn-0g-bxf"/>
                                                     <constraint firstItem="YhT-MG-jQd" firstAttribute="leading" secondItem="Nlg-c7-3cn" secondAttribute="leading" id="lbh-BE-kK0"/>
                                                 </constraints>
                                             </stackView>
@@ -665,17 +666,21 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="I7y-U4-XJr"/>
                     </navigationItem>
                     <connections>
-                        <outletCollection property="buttons" destination="RYe-Vg-WsJ" collectionClass="NSMutableArray" id="1CD-6M-IJX"/>
                         <outletCollection property="views" destination="a85-Bk-7dh" collectionClass="NSMutableArray" id="8dW-Ug-Mdk"/>
                         <outletCollection property="views" destination="QKo-EA-Eu9" collectionClass="NSMutableArray" id="Mc8-lR-lD9"/>
                         <outletCollection property="views" destination="EBo-fJ-HLo" collectionClass="NSMutableArray" id="MZF-0T-lcL"/>
                         <outletCollection property="views" destination="YhT-MG-jQd" collectionClass="NSMutableArray" id="uQi-Lz-RrU"/>
                         <outletCollection property="views" destination="atm-Gw-zIv" collectionClass="NSMutableArray" id="uCJ-Qg-qlN"/>
+                        <outletCollection property="buttons" destination="T8J-01-zQK" collectionClass="NSMutableArray" id="6jf-bm-neC"/>
+                        <outletCollection property="buttons" destination="KMY-gs-Ig6" collectionClass="NSMutableArray" id="MyE-py-LBq"/>
+                        <outletCollection property="buttons" destination="AIi-Hb-lX8" collectionClass="NSMutableArray" id="Xtp-xE-wwU"/>
+                        <outletCollection property="buttons" destination="RYe-Vg-WsJ" collectionClass="NSMutableArray" id="Bxy-mM-POZ"/>
+                        <outletCollection property="buttons" destination="iJf-19-6vb" collectionClass="NSMutableArray" id="lgQ-V5-WgG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2214" y="-562"/>
+            <point key="canvasLocation" x="2213.5999999999999" y="-562.3152709359606"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="C3D-CS-hzq">
@@ -1199,7 +1204,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="310"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cWa-CD-T4e" id="aTg-Qa-Ht5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="309.66666666666669"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="image6" translatesAutoresizingMaskIntoConstraints="NO" id="KBB-L9-Rev">

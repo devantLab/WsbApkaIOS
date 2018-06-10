@@ -12,6 +12,7 @@ import LocalizationKit
 class UniversityController: UIViewController {
     @IBOutlet var views: [UIView]!
     @IBOutlet var buttons: [UIButton]!
+   
     //STRINGS
     @objc func notificationButtonText() -> String { return Localization.get("DoniesDokumenty", alternate: "Donieś dokumenty") }
     @objc func openingHoursButtonText() -> String { return Localization.get("GodzinyOtwarcia", alternate: "Godziny otwarcia") }
@@ -29,7 +30,7 @@ class UniversityController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(setLanguage), name: Localization.localizationEvent(localizationKey: "MapaUczelni"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setLanguage), name: Localization.localizationEvent(localizationKey: "BiuroKarier"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(setLanguage), name: Localization.localizationEvent(localizationKey: "Kalendarz"), object: nil)
-        
+
         views.forEach({view in
             view.round(corners: .allCorners, radius: 10)
         })
@@ -42,14 +43,13 @@ class UniversityController: UIViewController {
     @IBAction func buttonClick(_ sender: UIButton) {
         sender.flash()
     }
-    //LanguageManager Protocol setLanguage() method implementation
     @objc func setLanguage(){
         buttons[0].setTitle(notificationButtonText(), for: .normal)
         buttons[1].setTitle(openingHoursButtonText(), for: .normal)
         buttons[2].setTitle(universityMapButtonText(), for: .normal)
         buttons[3].setTitle(careersOfficeButtonText(), for: .normal)
         buttons[4].setTitle(calendarButtonText(), for: .normal)
-        
+
     }
     
 }

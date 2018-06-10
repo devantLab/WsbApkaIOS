@@ -44,7 +44,7 @@ class HomeController: UIViewController {
         //disabling the button until the data is properly loaded
         buttons[1].isEnabled = false
         getEvent()
-        Localization.setLanguage("pl")
+        Localization.setLanguage("ru")
         //button cornerRadius
         alertView.round(corners: .allCorners, radius: 10)
         expandableView.round(corners: [.bottomLeft, .bottomRight], radius: 10)

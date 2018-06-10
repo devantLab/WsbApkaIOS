@@ -8,11 +8,18 @@
 import UIKit
 import PDFReader
 import SVProgressHUD
-
+import LocalizationKit
 class InfosController: UIViewController {
     
     @IBOutlet var views: [UIView]!
     @IBOutlet var buttons: [UIButton]!
+    @objc func notificationButtonText() -> String { return Localization.get("DoniesDokumenty", alternate: "Donieś dokumenty") }
+    @objc func openingHoursButtonText() -> String { return Localization.get("GodzinyOtwarcia", alternate: "Godziny otwarcia") }
+    @objc func universityMapButtonText() -> String { return Localization.get("MapaUczelni", alternate: "Mapa uczelni") }
+    @objc func careersOfficeButtonText() -> String { return Localization.get("BiuroKarier", alternate: "Biuro karier") }
+    @objc func calendarButtonText() -> String { return Localization.get("Kalendarz", alternate: "Kalendarz") }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         views.forEach({view in
@@ -35,7 +42,7 @@ class InfosController: UIViewController {
         }
     }
     
-    private func pushPDFViewController() {
+    fileprivate func pushPDFViewController() {
         SVProgressHUD.setForegroundColor(UIColor(red: 0.00, green: 0.32, blue: 0.91, alpha: 1.0))
         SVProgressHUD.show()
         DispatchQueue.global(qos: .userInitiated).async {
@@ -53,4 +60,9 @@ class InfosController: UIViewController {
             }
         }
     }
+    
+    fileprivate func setLanguage() {
+        
+    }
+
 }

@@ -1204,7 +1204,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="310"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cWa-CD-T4e" id="aTg-Qa-Ht5">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="310"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="309.66666666666669"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="image6" translatesAutoresizingMaskIntoConstraints="NO" id="KBB-L9-Rev">

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Event {
+struct Event: Decodable {
     let eventId: Int
     let eventTitle: String
     let eventDescription: String
@@ -24,22 +24,5 @@ class Event {
     let eventLatitude: Double
     let eventLongitude: Double
     
-
-    init(id: Int, title: String, description: String, city: String, street: String, date: Date, timeStart: String, timeEnd: String, clicks: Int, isWsbEvent: Bool, link: String, image: String, latitude: Double, longitude: Double) {
-        eventId = id
-        eventTitle = title
-        eventDescription = description
-        eventCity = city
-        eventStreet = street
-        eventDate = date
-        eventTimeStart = timeStart
-        eventTimeEnd = timeEnd
-        eventClicks = clicks
-        eventIsWSB = isWsbEvent
-        eventLink = link
-        eventImage = image
-        eventLatitude = latitude
-        eventLongitude = longitude
-    }
     
 }

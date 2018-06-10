@@ -51,7 +51,8 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.view.addSubview(activityView)
         let eventsRef = rootRef.child("Events")
         eventsRef.observe(DataEventType.childAdded, with: {(snapshot) in
-            if let dict = snapshot.value as? [String: Any] {
+            guard let dict = snapshot.value as? [String: Any] else { return }
+            do {
                 let event: Event = EventDataParser.parse(dict: dict)
                 self.events.append(event)
                 self.tableView.reloadData()
@@ -100,7 +101,7 @@ class EventsController: UIViewController, UITableViewDelegate, UITableViewDataSo
             let day = calendar.component(.day, from: date)
             destination.eventId = event.eventId
             destination.eventTitle = event.eventTitle
-            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: "pl")) \(year)"
+            destination.eventDate = "\(day) \(MonthConverter.monthName(month: month, language: Localization.language!.key)) \(year)"
             let time: String = (event.eventTimeEnd.elementsEqual("0")) ? "\(event.eventTimeStart)" : "\(event.eventTimeStart) - \(event.eventTimeEnd)"
             destination.eventTime = "\(time)"
             destination.eventCity = event.eventCity

@@ -1,10 +1,10 @@
 platform :ios, '9.0'
 
-target 'WSB' do
+target 'wsbNotify' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for WSB
+  # Pods for wsbNotify
     pod 'SDWebImage', '~> 4.0'
     pod 'ForecastIO'
     pod 'Fire'

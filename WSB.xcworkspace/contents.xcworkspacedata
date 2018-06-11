@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:WSB.xcodeproj">
+      location = "group:/Users/apple/Library/Autosave Information/WSB/wsbNotify.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

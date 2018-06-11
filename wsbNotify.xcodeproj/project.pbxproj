@@ -22,6 +22,7 @@
 		182BF81D20CD5DF90091CA4C /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BF81C20CD5DF90091CA4C /* MapManager.swift */; };
 		182BF81F20CD9E980091CA4C /* MapManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BF81E20CD9E980091CA4C /* MapManagerTest.swift */; };
 		182BF82020CDA67E0091CA4C /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BF81C20CD5DF90091CA4C /* MapManager.swift */; };
+		182BF82720CE7E340091CA4C /* LanguageSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182BF82620CE7E340091CA4C /* LanguageSelectController.swift */; };
 		183637E0207DF9DD00551501 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 183637DF207DF9DD00551501 /* GoogleService-Info.plist */; };
 		183AD86D2072887C002AA213 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183AD86C2072887C002AA213 /* ButtonExtension.swift */; };
 		1842DE1B208D08B3000200EE /* RecommendedAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1842DE1A208D08B3000200EE /* RecommendedAppController.swift */; };
@@ -74,6 +75,7 @@
 		182BF81E20CD9E980091CA4C /* MapManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManagerTest.swift; sourceTree = "<group>"; };
 		182BF82220CDAAD00091CA4C /* wsbNotify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = wsbNotify.entitlements; sourceTree = "<group>"; };
 		182BF82320CDAB570091CA4C /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Supporting Files/Bridging-Header.h"; sourceTree = "<group>"; };
+		182BF82620CE7E340091CA4C /* LanguageSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectController.swift; sourceTree = "<group>"; };
 		183637DF207DF9DD00551501 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		183AD86C2072887C002AA213 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		1842DE1A208D08B3000200EE /* RecommendedAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedAppController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				18F38511208B8E0000B9B8C6 /* University */,
 				18F38513208B8E1C00B9B8C6 /* Events */,
 				18F38512208B8E1500B9B8C6 /* Infos */,
+				182BF82620CE7E340091CA4C /* LanguageSelectController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 				1842DE1D208D08CF000200EE /* AppTableViewCell.swift in Sources */,
 				188A8DEC2081238F004A31B6 /* EventDetailController.swift in Sources */,
 				180B842B206DA85E00C44334 /* AppDelegate.swift in Sources */,
+				182BF82720CE7E340091CA4C /* LanguageSelectController.swift in Sources */,
 				18F3850F208B80F800B9B8C6 /* MonthConverter.swift in Sources */,
 				182BF81D20CD5DF90091CA4C /* MapManager.swift in Sources */,
 				182060452076A64C006834FD /* Event.swift in Sources */,
